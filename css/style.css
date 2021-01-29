@@ -36,36 +36,3 @@
        url("../fonts/ptsansbold.woff") format("woff");
 }
 
-/* цвета */
-:root {
-  --basic-white: #ffffff;
-  --lightgray: #c5c5c5;
-  --gray: #cacaca;
-  --basic-black: #000000;
-  --light-bluegray: #405069;
-  --bluegray: #32425C;
-  --dark-bluegray: #293449;
-  --social-bluegray: #212A3A;
-  --site-nav-bluegray: #1D2739;
-  --ultra-dark-bluegray: #161D29;
-  --basic-red: #ee3643;
-  --red-button-hover: #CA2C37;
-  --red-button-active: #BA2732;
-  --basic-gree: #63A63E;
-  --green-button-hover: #5FBB2D;
-  --green-button-active: #518534;
-  --green-shadow: #367315;
-  --light-background: #F1F5F7;
-  --subtitle-backgroumd: #F9F5F0;
-  --perf-background: #F2F6F8;
-  --phone-background: #F3F7F9;
-  --card-border: #EAEAEA;
-  --button-border: #E5E5E5;
-  --button-border-hover: #C5C5C5;
-  --special-yellow: #FFBF47;
-  --special-blue: #3BBCE3;
-  --special-lilac: #3BBCE3;
-  --special-greenlight: #8ED78F;
-  --special-yellowlight: #FFC047;
-}
-;
