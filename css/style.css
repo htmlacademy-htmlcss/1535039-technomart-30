@@ -85,7 +85,6 @@
   font-weight: 400;
   font-size: 13px;
   line-height: 24px;
-  font-weight: normal;
 }
 img {
   max-width: 100%;
@@ -135,7 +134,6 @@ img {
   line-height: 24px;
 }
 .logo {
-  display: inline-block;
   background-color: var(--basic-red);
   text-decoration: none;
 }
@@ -369,10 +367,10 @@ img {
   font-family: "PT Sans bold", Arial, sans-serif;
   font-weight: 700;
 }
-.product-card:hover > .product-image {
+.product-card:hover .product-image {
   visibility: hidden;
 }
-.product-card:hover > .buy-block {
+.product-card:hover .buy-block {
   visibility: visible;
 }
 .product-title {
@@ -574,7 +572,7 @@ img {
 .button-cont {
   color: var(--basic-black);
   background-color: #fff;
-  :var(--basic-white) ;
+  :var(--basic-white);
   font-size: 14px;
   line-height: 18px;
   text-transform: uppercase;
