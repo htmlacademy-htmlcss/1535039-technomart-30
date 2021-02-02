@@ -213,7 +213,7 @@ img {
 }
 .header-middle-wrapper {
   display: grid;
-  grid-template-columns: repeat(3, 33%);
+  grid-template-columns: repeat(3, 1fr);
   column-gap: 20px;
 }
 .header-description {
@@ -305,7 +305,7 @@ img {
 }
 .features-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(300px, 300px));
   grid-template-rows: 123px 123px 123px;
   gap: 20px;
   grid-template-areas:
@@ -319,7 +319,11 @@ img {
   margin: 0;
 }
 .features-item {
-  padding: 20px 0 21px 22px;
+  display: grid;
+  grid-template-columns: 160px 140px;
+  grid-template-areas:
+    "fd fi"
+    "fl fi";
 }
 .features-materials {
   background-color: var(--special-yellow);
@@ -346,6 +350,7 @@ img {
   font-weight: 700;
   font-size: 24px;
   line-height: 30px;
+  grid-area: fd;
 }
 .features-link {
   font-weight: normal;
@@ -355,6 +360,7 @@ img {
   text-decoration: none;
   text-transform: uppercase;
   background-color: var(--features-button-bg);
+  grid-area: fl;
 }
 .features-link:hover,
 .features-link:focus {
@@ -362,6 +368,9 @@ img {
 }
 .features-link:active {
   background-color: var(--features-button-active);
+}
+.feature-image {
+  grid-area: fi;
 }
 .label-new {
   color: var(--basic-white);
@@ -770,6 +779,32 @@ img {
   width: 620px;
   height: 430px;
 }
+.feedback-form {
+  display: grid;
+  grid-template-areas:
+    "ni mi"
+    "ti ti"
+    "fb fb";
+  column-gap: 20px;
+  padding: 46px 80px 0 80px;
+}
+.name-input {
+  grid-area: ni;
+}
+.mail-input {
+  grid-area: mi;
+}
+.text-input {
+  grid-area: ti;
+  padding-bottom: 37px;
+}
+.name-input,
+.mail-input,
+.text-input,
+.feedback-bottom {
+  display: flex;
+  flex-direction: column;
+}
 .modal-label {
   font-size: 18px;
   line-height: 24px;
@@ -781,6 +816,8 @@ img {
 }
 .feedback-bottom {
   background-color: var(--modal-bg);
+  grid-area: fb;
+  padding: 37px 80px;
 }
 /* Стили блока фильтров */
 
@@ -799,8 +836,7 @@ img {
 }
 .button-cont {
   color: var(--basic-black);
-  background-color: #fff;
-  :var(--basic-white);
+  background-color: var(--basic-white);
   font-size: 14px;
   line-height: 18px;
   text-transform: uppercase;
