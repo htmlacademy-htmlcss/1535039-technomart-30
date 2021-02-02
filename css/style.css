@@ -78,8 +78,14 @@
 }
 
 /* Глобальные */
-
+.page {
+  height: 100%;
+}
 .page-body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  align-content: start;
   min-width: 940px;
   margin: 0;
   padding: 0;
@@ -128,12 +134,18 @@ img {
 /* Стилизация хедера */
 .main-header {
   background-image: url("../img/decor/top-background.png");
+  padding-bottom: 60px;
+  display: grid;
 }
 .header-top {
   background-color: var(--dark-bluegray);
   color: var(--basic-white);
   font-size: 18px;
   line-height: 24px;
+  height: min-content;
+}
+.header-top-wrapper {
+
 }
 .logo {
   background-color: var(--basic-red);
@@ -196,6 +208,14 @@ img {
 .order:active {
   background-color: var(--green-button-active);
 }
+.header-middle {
+  height: min-content;
+}
+.header-middle-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  column-gap: 20px;
+}
 .header-description {
   font-family: "Cuprum italic", Arial, sans-serif;
   font-size: 16px;
@@ -213,6 +233,7 @@ img {
   background-color: var(--phone-background);
   border: 3px solid var(--basic-white);
   text-decoration: none;
+  display: block;
 }
 .header-addres {
   font-size: 14px;
@@ -226,6 +247,10 @@ img {
   font-size: 21px;
   line-height: 21px;
   text-decoration: none;
+  display: block;
+}
+.user-options-link {
+  display: block;
 }
 .login:hover,
 .registration:hover,
@@ -240,10 +265,10 @@ img {
   color: var(--lightgray);
 }
 .main-navigation {
-  background-color: var(--bluegray);
 }
 .site-nav {
   list-style: none;
+  background-color: var(--bluegray);
 }
 .site-nav-link {
   color: var(--basic-white);
@@ -278,25 +303,43 @@ img {
   line-height: 30px;
   text-transform: uppercase;
 }
+.features-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 123px 123px 123px;
+  gap: 20px;
+  grid-template-areas:
+    "fm ft ftc"
+    "fs fs fd"
+    "fs fs fdv";
+}
 .features-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+.features-item {
+  padding: 20px 0 21px 22px;
+}
 .features-materials {
   background-color: var(--special-yellow);
+  grid-area: fm;
 }
 .features-tools {
   background-color: var(--special-blue);
+  grid-area: ft;
 }
 .features-technics {
   background-color: var(--special-lilac);
+  grid-area: ftc;
 }
 .features-discount {
   background-color: var(--special-greenlight);
+  grid-area: fd;
 }
 .features-delivery {
   background-color: var(--special-yellowlight);
+  grid-area: fdv;
 }
 .features-desc {
   font-family: "Cuprum bold", Arial, sans-serif;
@@ -326,19 +369,27 @@ img {
   text-transform: uppercase;
   font-size: 14px;
   line-height: 18px;
+  position: absolute;
 }
 .slider {
   background-color: var(--light-bluegray);
+  grid-area: fs;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 .slide-1 {
   background-image: url("../img/decor/perforator.jpg");
   background-repeat: no-repeat;
   background-size: contain;
+  height: 100%;
 }
 .slide-2 {
   background-image: url("../img/decor/drill.jpg");
   background-repeat: no-repeat;
   background-size: contain;
+  height: 100%;
+  display: none;
 }
 .slider-text{
   background-color: var(--slider-bg);
@@ -349,6 +400,8 @@ img {
   font-size: 36px;
   line-height: 36px;
   text-transform: uppercase;
+  padding: 0;
+  margin: 0;
 }
 .slide-text {
   font-family: "Cuprum", Arial, sans-serif;
@@ -357,6 +410,9 @@ img {
   line-height: 24px;
 }
 /* Стили блока популярных товаров */
+.popular-products {
+  padding-bottom: 70px;
+}
 .section-header{
   background-color: var(--subtitle-backgroumd);
 }
@@ -367,6 +423,12 @@ img {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 220px));
+  gap: 20px;
+}
+.product-list-item {
+  height: 318px;
 }
 .product-card{
   font-family: "PT Sans bold", Arial, sans-serif;
@@ -428,10 +490,19 @@ img {
   opacity: 0.5;
 }
 /* Стили блока популярных брендов */
+.popular-brands {
+  padding-bottom: 70px;
+}
 .brands-list {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.brands-list-item {
+  height: 145px;
 }
 .brand-link:active {
   opacity: .5;
@@ -439,6 +510,8 @@ img {
 /* Стили блока с сервисами */
 .services {
   background-color: var(--light-background);
+  min-height: 522px;
+  padding-top: 64px;
 }
 .text {
   font-family: "Pt Sans", Arial, sans-serif;
@@ -450,15 +523,38 @@ img {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 61px 61px 61px auto;
+  column-gap: 20px;
+  grid-template-areas:
+    "sd sdesc"
+    "sg sdesc"
+    "sc sdesc";
+}
+.service {
+  display: contents;
 }
 .service-name {
   font-family: "Cuprum bold", Arial, sans-serif;
   font-weight: 700;
   font-size: 21px;
   line-height: 30px;
+  width: 240px;
+  height: 61px;
+  justify-self: start;
   color: var(--basic-white);
   background-color: var(--bluegray);
   cursor: pointer;
+}
+.service-name-delivery {
+  grid-area: sd;
+}
+.service-name-guarantee {
+  grid-area: sg;
+}
+.service-name-credit {
+  grid-area: sc;
 }
 .service-name:hover {
   background-color: var(--dark-bluegray);
@@ -469,6 +565,8 @@ img {
 }
 .service-desc {
   display: none;
+  height: 283px;
+  grid-area: sdesc;
 }
 .service-check:checked ~ .service-desc {
   display: block;
@@ -477,6 +575,7 @@ img {
   font-size: 30px;
   line-height: 30px;
   color: var(--bluegray);
+  text-transform: uppercase;
 }
 .service-delivery {
   background: url("../img/decor/delivery.png") no-repeat right;
@@ -486,6 +585,12 @@ img {
 }
 .service-credit {
   background: url("../img/decor/credit.png") no-repeat right;
+}
+/* Grid нижнего блока */
+.company-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding-bottom: 70px;
 }
 /* Стили блока "о компании" */
 .delivery-list {
@@ -504,8 +609,11 @@ img {
   background-color: var(--bluegray);
   line-height: 24px;
 }
-.footer-top-menu {
+.footer-top-menu,
+.footer-bottom-menu {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 .footer-top-link {
   color: var(--basic-white);
@@ -514,9 +622,6 @@ img {
 .footer-phone {
   color: var(--basic-white);
   text-decoration: none;
-}
-.footer-bottom-menu {
-  list-style: none;
 }
 .footer-bottom-link {
   color: var(--footer-link);
@@ -661,6 +766,10 @@ img {
   background-color: var(--light-background);
 }
 /* стили модалки обратной связи */
+.feedback-modal {
+  width: 620px;
+  height: 430px;
+}
 .modal-label {
   font-size: 18px;
   line-height: 24px;
@@ -676,6 +785,9 @@ img {
 /* Стили блока фильтров */
 
 /* стили модалки каталога */
+.cart-modal {
+  background-color: var(--basic-white);
+}
 .cart-succes {
   font-family: "Cuprum bold", Arial, sans-serif;
   font-weight: 700;
