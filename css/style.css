@@ -605,7 +605,9 @@ img {
   line-height: 18px;
   color: var(--basic-black);
 }
-.parameteres-list {
+.parameteres-list,
+.sort-parameteres,
+.sort-direction {
   list-style: none;
 }
 .parameteres-check:disabled + .parameteres-name,
@@ -615,17 +617,15 @@ img {
 .filteres-button {
   font-family: inherit;
   font-size: 13px;
-  line-height: 18px;background-color: var(--basic-white);
+  line-height: 18px;
+  background-color: var(--basic-white);
 }
 /* стили блока сортировки */
 .sorting {
-  background-color: var(--catalog-background);
   font-family: "Pt Sans", Arial, sans-serif;
   line-height: 18px;
   text-transform: uppercase;
-}
-.sort-parameteres {
-  list-style: none;
+  background-color: var(--catalog-background);
 }
 .sort-by {
   color: var(--basic-black);
@@ -639,9 +639,6 @@ img {
 }
 .sort-by:hover {
   opacity: 1;
-}
-.sort-direction {
-  list-style: none;
 }
 /* стили пагинации */
 .pagination {
