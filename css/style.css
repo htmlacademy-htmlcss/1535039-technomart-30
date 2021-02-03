@@ -36,6 +36,7 @@
 :root {
   --basic-white: #ffffff;
   --white-translucent: rgba(255, 255, 255, 0.5);
+  --brand-shadow: rgba(0,0,0,.15);
   --lightgray: #c5c5c5;
   --gray: #cacaca;
   --basic-black: #000000;
@@ -109,7 +110,7 @@ img {
   clip: rect(0 0 0 0);
 }
 .container {
-  width: 970px;
+  max-width: 970px;
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
@@ -118,9 +119,14 @@ img {
 .button {
   background-color: var(--basic-red);
   border: none;
+  max-height: 38px;
+  min-width: 192px;
+  padding-top: 11px;
+  padding-bottom: 9px;
   color: var(--basic-white);
   font-size: 14px;
   line-height: 18px;
+  text-align: center;
   text-transform: uppercase;
   text-decoration: none;
 }
@@ -295,6 +301,8 @@ img {
 /* Стилиблока акций и предложений */
 .features {
   color: var(--basic-white);
+  padding-top: 59px;
+  margin-bottom: 59px;
 }
 .section-title {
   color: var(--basic-black);
@@ -305,7 +313,7 @@ img {
 }
 .features-wrapper {
   display: grid;
-  grid-template-columns: repeat(3, minmax(300px, 300px));
+  grid-template-columns: repeat(3, 300px);
   grid-template-rows: 123px 123px 123px;
   gap: 20px;
   grid-template-areas:
@@ -351,6 +359,9 @@ img {
   font-size: 24px;
   line-height: 30px;
   grid-area: fd;
+  padding-top: 20px;
+  padding-left: 23px;
+  margin: 0;
 }
 .features-link {
   font-weight: normal;
@@ -359,8 +370,15 @@ img {
   line-height: 18px;
   text-decoration: none;
   text-transform: uppercase;
+  text-align: center;
   background-color: var(--features-button-bg);
   grid-area: fl;
+  align-self: flex-end;
+  box-sizing: border-box;
+  margin-left: 23px;
+  margin-bottom: 21px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .features-link:hover,
 .features-link:focus {
@@ -369,8 +387,11 @@ img {
 .features-link:active {
   background-color: var(--features-button-active);
 }
-.feature-image {
+.features-image {
   grid-area: fi;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .label-new {
   color: var(--basic-white);
@@ -423,6 +444,13 @@ img {
   padding-bottom: 70px;
 }
 .section-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 28px;
+  padding-right: 14px;
+  padding-bottom: 1px;
+  margin-bottom: 20px;
   background-color: var(--subtitle-backgroumd);
 }
 .popular-title {
@@ -433,7 +461,7 @@ img {
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 220px));
+  grid-template-columns: repeat(auto-fit, 220px);
   gap: 20px;
 }
 .product-list-item {
@@ -442,6 +470,11 @@ img {
 .product-card{
   font-family: "PT Sans bold", Arial, sans-serif;
   font-weight: 700;
+  height: 100%;
+  border: 1px solid var(--card-border);
+}
+.product-card:hover {
+  box-shadow: 0 4px 20px var(--brand-shadow);
 }
 .product-card:hover .product-image {
   visibility: hidden;
@@ -494,7 +527,8 @@ img {
   text-decoration: none;
 }
 .bookmark-button:hover,
-.bookmark-button:focus {}
+.bookmark-button:focus {
+}
 .bookmark-button:active {
   opacity: 0.5;
 }
@@ -512,6 +546,19 @@ img {
 }
 .brands-list-item {
   height: 145px;
+  box-sizing: border-box;
+  border: 1px solid var(--card-border);
+}
+.brand-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.brand-link:hover,
+.brand-link:focus {
+  box-shadow: 0 4px 20px var(--brand-shadow);
 }
 .brand-link:active {
   opacity: .5;
@@ -627,6 +674,9 @@ img {
 .footer-top-link {
   color: var(--basic-white);
   text-decoration: none;
+}
+.footer-addres {
+  font-style: normal;
 }
 .footer-phone {
   color: var(--basic-white);
