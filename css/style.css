@@ -85,6 +85,7 @@
 .page-body {
   min-height: 100%;
   display: grid;
+  grid-template-rows: -webkit-min-content 1fr -webkit-min-content;
   grid-template-rows: min-content 1fr min-content;
   align-content: start;
   min-width: 940px;
@@ -148,6 +149,8 @@ img {
   color: var(--basic-white);
   font-size: 18px;
   line-height: 24px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
   height: min-content;
 }
 .header-top-wrapper {
@@ -170,6 +173,9 @@ img {
   background-color: var(--basic-white);
   color: var(--basic-black);
 }
+.input-search::-webkit-input-placeholder,
+.input-search::-moz-placeholder,
+.input-search::-ms-input-placeholder,
 .input-search::placeholder {
   color: var(--basic-white);
   font-family: "Cuprum", Arial, sans-serif;
@@ -215,11 +221,14 @@ img {
   background-color: var(--green-button-active);
 }
 .header-middle {
+  height: -webkit-min-content;
+  height: -moz-min-content;
   height: min-content;
 }
 .header-middle-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  -moz-column-gap: 20px;
   column-gap: 20px;
 }
 .header-description {
@@ -494,6 +503,7 @@ img {
 }
 .old-price {
   color: var(--placeholder);
+  -webkit-text-decoration: solid;
   text-decoration: solid;
   font-size: 17px;
   line-height: 18px;
@@ -582,6 +592,7 @@ img {
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 61px 61px 61px auto;
+  -moz-column-gap: 20px;
   column-gap: 20px;
   grid-template-areas:
     "sd sdesc"
@@ -763,6 +774,9 @@ img {
 .price-input {
   background-color: var(--catalog-background);
 }
+.price-input::-webkit-input-placeholder,
+.price-input::-moz-placeholder,
+.price-input::-ms-input-placeholder,
 .price-input::placeholder {
   font-family: inherit;
   font-size: 17px;
@@ -794,7 +808,9 @@ img {
 .sort-by {
   color: var(--basic-black);
   opacity: .3;
+  -webkit-text-decoration-color: var(--basic-red);
   text-decoration-color: var(--basic-red);
+  text-decoration-style: dotted;
 }
 .sort-by-active {
   color: var(--basic-red);
@@ -803,6 +819,7 @@ img {
 }
 .sort-by:hover {
   opacity: 1;
+  text-decoration-style: solid;
 }
 /* стили пагинации */
 .pagination {
@@ -835,6 +852,7 @@ img {
     "ni mi"
     "ti ti"
     "fb fb";
+  -moz-column-gap: 20px;
   column-gap: 20px;
   padding: 46px 80px 0 80px;
 }
@@ -859,6 +877,9 @@ img {
   font-size: 18px;
   line-height: 24px;
 }
+.modal-input::-webkit-input-placeholder,
+.modal-input::-moz-placeholder,
+.modal-input::-ms-input-placeholder,
 .modal-input::placeholder {
   font-size: 13px;
   line-height: 24px;
