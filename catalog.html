@@ -94,46 +94,51 @@
           <fieldset class="filteres-group">
             <legend class="filteres-type">Цена:</legend>
             <div>
-              <label class="visually-hidden price-text" for="min-price">Минимальная цена</label>
-              <input class="price-input" type="number" name="min-price" id="min-price" placeholder="0" value="0" title="Минимальная цена">
-              <span class="price-text">-</span>
-              <label class="visually-hidden price-text" for="max-price">Максимальная цена</label>
-              <input class="price-input" type="number" name="max-price" id="max-price" placeholder="30000" value="30000" title="Максимальная цена">
+              <div class="range-price"></div>
+              <div class="price-diapason">
+                <label class="visually-hidden price-text" for="min-price">Минимальная цена</label>
+                <input class="price-input" type="number" name="min-price" id="min-price" placeholder="0" value="0" title="Минимальная цена">
+                <span class="price-text">-</span>
+                <label class="visually-hidden price-text" for="max-price">Максимальная цена</label>
+                <input class="price-input" type="number" name="max-price" id="max-price" placeholder="30000" value="30000" title="Максимальная цена">
+              </div>
             </div>
           </fieldset>
+          <hr class="stripe">
           <fieldset class="filteres-group">
-            <legend class="filteres-type">Производители:</legend>
+            <legend class="filteres-type vendor">Производители:</legend>
             <ul class="parameteres-list">
-              <li class="parameteres-item">
+              <li class="parameteres-item vendor-item">
                 <input class="parameteres-check visually-hidden" type="checkbox" name="bosch" id="filter-bosch" checked>
                 <label class="parameteres-name" for="filter-bosch">Bosch</label>
               </li>
-              <li class="parameteres-item">
+              <li class="parameteres-item vendor-item">
                 <input class="parameteres-check visually-hidden" type="checkbox" name="interskol" id="filter-interskol">
                 <label class="parameteres-name" for="filter-interskol">Интерскол</label>
               </li>
-              <li class="parameteres-item">
+              <li class="parameteres-item vendor-item">
                 <input class="parameteres-check visually-hidden" type="checkbox" name="makita" id="filter-makita" checked>
                 <label class="parameteres-name" for="filter-makita">Makita</label>
               </li>
-              <li class="parameteres-item">
+              <li class="parameteres-item vendor-item">
                 <input class="parameteres-check visually-hidden" type="checkbox" name="dewalt" id="filter-dewalt">
                 <label class="parameteres-name" for="filter-dewalt">DeWalt</label>
               </li>
-              <li class="parameteres-item">
+              <li class="parameteres-item vendor-item">
                 <input class="parameteres-check visually-hidden" type="checkbox" name="hitachi" id="filter-hitachi">
                 <label class="parameteres-name" for="filter-hitachi">Hitachi</label>
               </li>
             </ul>
           </fieldset>
+          <hr class="stripe">
           <fieldset class="filteres-group">
-            <legend class="filteres-type">Питание:</legend>
+            <legend class="filteres-type supply">Питание:</legend>
             <ul class="parameteres-list">
-              <li class="parameteres-item">
+              <li class="parameteres-item supply-item">
                 <input class="parameteres-radio visually-hidden" type="radio" name="power-supply" value="accum" id="filter-accum" checked>
                 <label class="parameteres-name" for="filter-accum">Аккумуляторные</label>
               </li>
-              <li class="parameteres-item">
+              <li class="parameteres-item supply-item">
                 <input class="parameteres-radio visually-hidden" type="radio" name="power-supply" value="network" id="filter-network">
                 <label class="parameteres-name" for="filter-network">Сетевые</label>
               </li>
@@ -159,10 +164,20 @@
           </ul>
           <ul class="sort-direction">
             <li class="direction-item">
-              <a class="sort-up direction-active" href="#"><span class="visually-hidden">Сортировать по возрастанию</span><a>
+              <a class="sort-up direction-active" href="#">
+                <span class="visually-hidden">Сортировать по возрастанию</span>
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.66241 0L11.1624 10L0.162415 10" fill="current"/>
+                </svg>
+              </a>
             </li>
             <li class="direction-item">
-              <a class="sort-down" href="#"><span class="visually-hidden">Сортировать по убыванию</span></a>
+              <a class="sort-down" href="#">
+                <span class="visually-hidden">Сортировать по убыванию</span>
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.66241 0L11.1624 10L0.162415 10" fill="current"/>
+                </svg>
+              </a>
             </li>
           </ul>
         </section>
@@ -270,36 +285,6 @@
                 <h3 class="product-title"><a class="product-link" href="">Перфоратор BOSCH BFG 3000</a></h3>
                 <p class="old-price"><s>22500 Р.</s></p>
                 <p class="actual-price"><span>15500 Р.</span></p>
-              <p class="label-new new-true">new</p>
-              </article>
-            </li>
-            <li class="product-list-item">
-              <article class="product-card">
-                <div class="product-image">
-                  <img src="img/products/bfg-6000.jpg" alt="Изображение товара" width="144" height="128">
-                </div>
-                <div class="buy-block">
-                  <a class="buy-button" href="#">Купить</a>
-                  <a class="bookmark-button" href="#">В закладки</a>
-                </div>
-                <h3 class="product-title"><a class="product-link" href="">Перфоратор BOSCH BFG 6000</a></h3>
-                <p class="old-price"><s>30500 Р.</s></p>
-                <p class="actual-price"><span>25500 Р.</span></p>
-              <p class="label-new">new</p>
-              </article>
-            </li>
-            <li class="product-list-item">
-              <article class="product-card">
-                <div class="product-image">
-                  <img src="img/products/bfg-2000.jpg" alt="Изображение товара" width="127" height="112">
-                </div>
-                <div class="buy-block">
-                  <a class="buy-button" href="#">Купить</a>
-                  <a class="bookmark-button" href="#">В закладки</a>
-                </div>
-                <h3 class="product-title"><a class="product-link" href="">Перфоратор BOSCH BFG 2000</a></h3>
-                <p class="old-price"><s></s></p>
-                <p class="actual-price"><span>12500 Р.</span></p>
               <p class="label-new new-true">new</p>
               </article>
             </li>
@@ -441,13 +426,13 @@
       </div>
     </section>
   </footer>
-  <section class="cart-modal">
+  <section class="cart-modal modal">
     <p class="cart-succes" >Товар добавлен в корзину</p>
     <div class="cart-bottom">
       <a class="button" href="#">Оформить заказ</a>
-      <a class="button-cont" href="#">Продолжить покупки</a>
+      <a class=" button button-cont" href="#">Продолжить покупки</a>
     </div>
-    <button type="button">Закрыть окно</button>
+    <button class="modal-close" type="button"><span class="visually-hidden">Закрыть окно</span></button>
   </section>
 
   </body>
