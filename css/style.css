@@ -947,19 +947,27 @@ img {
   margin: 0;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: 61px 61px 61px auto;
   -moz-column-gap: 20px;
   column-gap: 20px;
-  grid-template-areas:
-    "sd sdesc"
-    "sg sdesc"
-    "sc sdesc";
-
   min-height: 283px;
 }
-.service {
-  display: contents;
-  padding-top: 3px;
+.services-names {
+  list-style: none;
+  margin: 0;
+  position: relative;
+  justify-self: start;
+  align-self: start;
+  padding: 0;
+}
+.services-names::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 279px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url("../img/decor/shadow.png");
 }
 .service-name {
   font-family: "Cuprum bold", Arial, sans-serif;
@@ -972,50 +980,30 @@ img {
   cursor: pointer;
   background-color: var(--bluegray);
   box-shadow: 0px 1px 0px var(--dark-bluegray), inset 0px 1px 0px var(--light-bluegray);
-  position: relative;
   display: flex;
   align-items: center;
-  padding-left: 22px;
+  padding: 0 5px 0 22px;
+  margin-bottom: 1px;
+  border: none;
+  box-sizing: border-box;
+  outline: none;
 }
-.service:nth-child(2) .service-name::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 10px;
-  height: 279px;
-  border-image: url("../img/decor/shadow.png");
-  border-color: red;
-  z-index: 100;
-}
-.service-name-delivery {
-  grid-area: sd;
-}
-.service-name-guarantee {
-  grid-area: sg;
-}
-.service-name-credit {
-  grid-area: sc;
-}
-.service-name:hover {
-  background-color: var(--dark-bluegray);
-}
-.service-check:checked + .service-name {
+.service-name-active {
   color: var(--bluegray);
   background-color: var(--basic-white);
   box-shadow: none;
 }
+.service-name:not(.service-name-active):hover,
+.service-name:not(.service-name-active):focus {
+  background-color: var(--dark-bluegray);
+  color: var(--basic-white);
+}
 .service-desc {
   height: 283px;
   grid-area: sdesc;
-  visibility: hidden;
   overflow: hidden;
   box-sizing: border-box;
   background-size: contain;
-}
-.service-check:checked ~ .service-desc {
-  visibility: visible;
 }
 .service-title {
   font-size: 30px;
