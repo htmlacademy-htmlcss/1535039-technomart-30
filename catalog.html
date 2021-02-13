@@ -103,15 +103,19 @@
         <form class="filteres-form" action="https://echo.htmlacademy.ru" method="POST">
           <fieldset class="filteres-group">
             <legend class="filteres-type">Цена:</legend>
-            <div>
-              <div class="range-price"></div>
-              <div class="price-diapason">
-                <label class="visually-hidden price-text" for="min-price">Минимальная цена</label>
-                <input class="price-input" type="number" name="min-price" id="min-price" placeholder="0" value="0" title="Минимальная цена">
-                <span class="price-text">-</span>
-                <label class="visually-hidden price-text" for="max-price">Максимальная цена</label>
-                <input class="price-input" type="number" name="max-price" id="max-price" placeholder="30000" value="30000" title="Максимальная цена">
+            <div class="range-price">
+              <div class="scale">
+                <div class="bar" style="width: 50%; margin-left: 0%"></div>
+                <div class="toggle toggle-min" tabindex="0" style="left: 0%"></div>
+                <div class="toggle toggle-max" tabindex="0" style="left: 50%"></div>
               </div>
+            </div>
+            <div class="price-diapason">
+              <label class="visually-hidden price-text" for="min-price">Минимальная цена</label>
+              <input class="price-input" type="number" name="min-price" id="min-price" placeholder="0" value="0" title="Минимальная цена">
+              <span class="price-text">-</span>
+              <label class="visually-hidden price-text" for="max-price">Максимальная цена</label>
+              <input class="price-input" type="number" name="max-price" id="max-price" placeholder="30000" value="30000" title="Максимальная цена">
             </div>
           </fieldset>
           <hr class="stripe">
@@ -121,22 +125,57 @@
               <li class="parameteres-item vendor-item">
                 <input class="parameteres-check visually-hidden" type="checkbox" name="bosch" id="filter-bosch" checked>
                 <label class="parameteres-name" for="filter-bosch">Bosch</label>
+                <svg class="input-pic check-off" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M3 0H20C21.65 0 23 1.35 23 3V20C23 21.65 21.65 23 20 23H3C1.35 23 0 21.65 0 20V3C0 1.35 1.35 0 3 0ZM21 3C21 2.458 20.542 2 20 2H3C2.458 2 2 2.458 2 3V20C2 20.542 2.458 21 3 21H20C20.542 21 21 20.542 21 20V3Z" fill="current"/>
+                </svg>
+                <svg class="input-pic check-on" width="27" height="23" viewBox="0 0 27 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.28499 7.48598L4.45599 10.315L12.239 18.098L26.171 4.16598L23.343 1.33698L12.239 12.439L7.28499 7.48598Z" fill="current"/>
+                  <path d="M21 20C21 20.542 20.542 21 20 21H3C2.458 21 2 20.542 2 20V3C2 2.458 2.458 2 3 2H19.908L21.493 0.415C21.041 0.146542 20.5257 0.00329969 20 0H3C1.35 0 0 1.35 0 3V20C0 21.65 1.35 23 3 23H20C21.65 23 23 21.65 23 20V10.171L21 12.171V20Z" fill="current"/>
+                </svg>
               </li>
               <li class="parameteres-item vendor-item">
                 <input class="parameteres-check visually-hidden" type="checkbox" name="interskol" id="filter-interskol">
                 <label class="parameteres-name" for="filter-interskol">Интерскол</label>
+                <svg class="input-pic check-off" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M3 0H20C21.65 0 23 1.35 23 3V20C23 21.65 21.65 23 20 23H3C1.35 23 0 21.65 0 20V3C0 1.35 1.35 0 3 0ZM21 3C21 2.458 20.542 2 20 2H3C2.458 2 2 2.458 2 3V20C2 20.542 2.458 21 3 21H20C20.542 21 21 20.542 21 20V3Z" fill="current"/>
+                </svg>
+                <svg class="input-pic check-on" width="27" height="23" viewBox="0 0 27 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.28499 7.48598L4.45599 10.315L12.239 18.098L26.171 4.16598L23.343 1.33698L12.239 12.439L7.28499 7.48598Z" fill="current"/>
+                  <path d="M21 20C21 20.542 20.542 21 20 21H3C2.458 21 2 20.542 2 20V3C2 2.458 2.458 2 3 2H19.908L21.493 0.415C21.041 0.146542 20.5257 0.00329969 20 0H3C1.35 0 0 1.35 0 3V20C0 21.65 1.35 23 3 23H20C21.65 23 23 21.65 23 20V10.171L21 12.171V20Z" fill="current"/>
+                </svg>
               </li>
               <li class="parameteres-item vendor-item">
                 <input class="parameteres-check visually-hidden" type="checkbox" name="makita" id="filter-makita" checked>
                 <label class="parameteres-name" for="filter-makita">Makita</label>
+                <svg class="input-pic check-off" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M3 0H20C21.65 0 23 1.35 23 3V20C23 21.65 21.65 23 20 23H3C1.35 23 0 21.65 0 20V3C0 1.35 1.35 0 3 0ZM21 3C21 2.458 20.542 2 20 2H3C2.458 2 2 2.458 2 3V20C2 20.542 2.458 21 3 21H20C20.542 21 21 20.542 21 20V3Z" fill="current"/>
+                </svg>
+                <svg class="input-pic check-on" width="27" height="23" viewBox="0 0 27 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.28499 7.48598L4.45599 10.315L12.239 18.098L26.171 4.16598L23.343 1.33698L12.239 12.439L7.28499 7.48598Z" fill="current"/>
+                  <path d="M21 20C21 20.542 20.542 21 20 21H3C2.458 21 2 20.542 2 20V3C2 2.458 2.458 2 3 2H19.908L21.493 0.415C21.041 0.146542 20.5257 0.00329969 20 0H3C1.35 0 0 1.35 0 3V20C0 21.65 1.35 23 3 23H20C21.65 23 23 21.65 23 20V10.171L21 12.171V20Z" fill="current"/>
+                </svg>
               </li>
               <li class="parameteres-item vendor-item">
                 <input class="parameteres-check visually-hidden" type="checkbox" name="dewalt" id="filter-dewalt">
                 <label class="parameteres-name" for="filter-dewalt">DeWalt</label>
+                <svg class="input-pic check-off" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M3 0H20C21.65 0 23 1.35 23 3V20C23 21.65 21.65 23 20 23H3C1.35 23 0 21.65 0 20V3C0 1.35 1.35 0 3 0ZM21 3C21 2.458 20.542 2 20 2H3C2.458 2 2 2.458 2 3V20C2 20.542 2.458 21 3 21H20C20.542 21 21 20.542 21 20V3Z" fill="current"/>
+                </svg>
+                <svg class="input-pic check-on" width="27" height="23" viewBox="0 0 27 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.28499 7.48598L4.45599 10.315L12.239 18.098L26.171 4.16598L23.343 1.33698L12.239 12.439L7.28499 7.48598Z" fill="current"/>
+                  <path d="M21 20C21 20.542 20.542 21 20 21H3C2.458 21 2 20.542 2 20V3C2 2.458 2.458 2 3 2H19.908L21.493 0.415C21.041 0.146542 20.5257 0.00329969 20 0H3C1.35 0 0 1.35 0 3V20C0 21.65 1.35 23 3 23H20C21.65 23 23 21.65 23 20V10.171L21 12.171V20Z" fill="current"/>
+                </svg>
               </li>
               <li class="parameteres-item vendor-item">
                 <input class="parameteres-check visually-hidden" type="checkbox" name="hitachi" id="filter-hitachi">
                 <label class="parameteres-name" for="filter-hitachi">Hitachi</label>
+                <svg class="input-pic check-off" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M3 0H20C21.65 0 23 1.35 23 3V20C23 21.65 21.65 23 20 23H3C1.35 23 0 21.65 0 20V3C0 1.35 1.35 0 3 0ZM21 3C21 2.458 20.542 2 20 2H3C2.458 2 2 2.458 2 3V20C2 20.542 2.458 21 3 21H20C20.542 21 21 20.542 21 20V3Z" fill="current"/>
+                </svg>
+                <svg class="input-pic check-on" width="27" height="23" viewBox="0 0 27 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.28499 7.48598L4.45599 10.315L12.239 18.098L26.171 4.16598L23.343 1.33698L12.239 12.439L7.28499 7.48598Z" fill="current"/>
+                  <path d="M21 20C21 20.542 20.542 21 20 21H3C2.458 21 2 20.542 2 20V3C2 2.458 2.458 2 3 2H19.908L21.493 0.415C21.041 0.146542 20.5257 0.00329969 20 0H3C1.35 0 0 1.35 0 3V20C0 21.65 1.35 23 3 23H20C21.65 23 23 21.65 23 20V10.171L21 12.171V20Z" fill="current"/>
+                </svg>
               </li>
             </ul>
           </fieldset>
@@ -147,10 +186,24 @@
               <li class="parameteres-item supply-item">
                 <input class="parameteres-radio visually-hidden" type="radio" name="power-supply" value="accum" id="filter-accum" checked>
                 <label class="parameteres-name" for="filter-accum">Аккумуляторные</label>
+                <svg class="input-pic radio-off" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12.5C0 5.597 5.597 0 12.5 0C19.403 0 25 5.597 25 12.5C25 19.403 19.403 25 12.5 25C5.597 25 0 19.403 0 12.5ZM21 12.5C21 7.813 17.187 4 12.5 4C7.813 4 4 7.813 4 12.5C4 17.187 7.813 21 12.5 21C17.187 21 21 17.187 21 12.5Z" fill="current"/>
+                </svg>
+                <svg class="input-pic radio-on" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12.5C0 5.597 5.597 0 12.5 0C19.403 0 25 5.597 25 12.5C25 19.403 19.403 25 12.5 25C5.597 25 0 19.403 0 12.5ZM21 12.5C21 7.813 17.187 4 12.5 4C7.813 4 4 7.813 4 12.5C4 17.187 7.813 21 12.5 21C17.187 21 21 17.187 21 12.5Z" fill="current"/>
+                  <path d="M12.5 17C14.9853 17 17 14.9853 17 12.5C17 10.0147 14.9853 8 12.5 8C10.0147 8 8 10.0147 8 12.5C8 14.9853 10.0147 17 12.5 17Z" fill="current"/>
+                </svg>
               </li>
               <li class="parameteres-item supply-item">
                 <input class="parameteres-radio visually-hidden" type="radio" name="power-supply" value="network" id="filter-network">
                 <label class="parameteres-name" for="filter-network">Сетевые</label>
+                <svg class="input-pic radio-off" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12.5C0 5.597 5.597 0 12.5 0C19.403 0 25 5.597 25 12.5C25 19.403 19.403 25 12.5 25C5.597 25 0 19.403 0 12.5ZM21 12.5C21 7.813 17.187 4 12.5 4C7.813 4 4 7.813 4 12.5C4 17.187 7.813 21 12.5 21C17.187 21 21 17.187 21 12.5Z" fill="current"/>
+                </svg>
+                <svg class="input-pic radio-on" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12.5C0 5.597 5.597 0 12.5 0C19.403 0 25 5.597 25 12.5C25 19.403 19.403 25 12.5 25C5.597 25 0 19.403 0 12.5ZM21 12.5C21 7.813 17.187 4 12.5 4C7.813 4 4 7.813 4 12.5C4 17.187 7.813 21 12.5 21C17.187 21 21 17.187 21 12.5Z" fill="current"/>
+                  <path d="M12.5 17C14.9853 17 17 14.9853 17 12.5C17 10.0147 14.9853 8 12.5 8C10.0147 8 8 10.0147 8 12.5C8 14.9853 10.0147 17 12.5 17Z" fill="current"/>
+                </svg>
               </li>
             </ul>
           </fieldset>

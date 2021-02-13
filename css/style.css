@@ -77,6 +77,8 @@
   --logo-shadow: rgba(0,0,0,.24);
   --price-text: #444;
   --nav-pic: #3D546F;
+  --scale-bg: #D7DCDE;
+  --input-hover: #B5B5B5;
 }
 
 /* Глобальные */
@@ -768,7 +770,7 @@ img {
   border: 1px solid var(--card-border);
   position: relative;
   overflow: hidden;
-  transition: all .2s;
+  transition: box-shadow .2s;
   box-sizing: border-box;
   padding: 6px 6px 21px;
   display: flex;
@@ -1304,8 +1306,32 @@ margin: 0;
 .range-price {
   width: 100%;
   height: 80px;
+  box-sizing: border-box;
   background-image: url("../img/decor/range-bg.png");
   margin-bottom: 9px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.scale {
+  height: 2px;
+  background-color: var(--scale-bg);
+  width: 100%;
+  position: relative;
+}
+.bar {
+  background-image: url("../img/decor/bar-bgy.png");
+  background-size: contain;
+  height: 100%;
+}
+.toggle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 22px;
+  background-image: url("../img/icons/filter-button.svg");
 }
 .price-diapason {
   display: flex;
@@ -1315,6 +1341,7 @@ margin: 0;
   font-size: 16px;
   line-height: 18px;
   color: var(--price-text);
+  align-self: center;
 }
 .price-input {
   background-color: var(--catalog-background);
@@ -1355,6 +1382,10 @@ margin: 0;
 .parameteres-item {
   font-size: 15px;
   line-height: 19px;
+  padding: 0;
+  position: relative;
+}
+.parameteres-name {
   padding-left: 35px;
 }
 .vendor-item:not(:last-child) {
@@ -1374,6 +1405,31 @@ margin: 0;
 }
 .supply-item:not(:last-child) {
   margin-bottom: 22.5px;
+}
+.input-pic {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: var(--lightgray);
+  z-index: -1;
+}
+.parameteres-name:hover ~ .input-pic {
+  fill: var(--input-hover);
+}
+.parameteres-check:disabled ~ .input-pic,
+.parameteres-radio:disabled ~ .input-pic {
+  opacity: 0.3;
+}
+.check-on,
+.radio-on,
+.parameteres-check:checked ~ .check-off,
+.parameteres-radio:checked ~ .radio-off {
+  display: none;
+}
+.parameteres-check:checked ~ .check-on,
+.parameteres-radio:checked ~ .radio-on {
+  display: block;
 }
 .filteres-button {
   font-family: inherit;
