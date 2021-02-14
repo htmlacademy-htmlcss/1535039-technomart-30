@@ -794,12 +794,27 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  backface-visibility: hidden;
+  transition: transform .3s;
+}
+.buy-block{
+  visibility: hidden;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+  grid-row: 1;
+  position: absolute;
+  top: 38px;
+  transform: rotateX(-180deg);
+  backface-visibility: hidden;
+  transition: transform .3s;
 }
 .product-card:hover .product-image {
-  visibility: hidden;
+  transform: rotateX(180deg);
 }
 .product-card:hover .buy-block {
   visibility: visible;
+  transform: rotateX(0deg);
 }
 .product-title {
   font-family: "PT Sans bold", Arial, sans-serif;
@@ -845,15 +860,6 @@ img {
 }
 .actual-price span {
   background-color: var(--basic-red);
-}
-.buy-block{
-  visibility: hidden;
-  font-size: 14px;
-  line-height: 18px;
-  text-transform: uppercase;
-  grid-row: 1;
-  position: absolute;
-  top: 38px;
 }
 .bookmark-button,
 .buy-button {
