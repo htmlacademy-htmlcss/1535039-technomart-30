@@ -21,9 +21,6 @@
         <form class="search-form" action="https://echo.htmlacademy.ru" method="POST">
             <input class="input-search" type="search" name="search" id="header-search" placeholder="Поиск:">
             <label class="search-label" for="header-search">
-              <svg class="search-icon" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.458 12.044L17 15.586L15.586 17L12.044 13.458C10.782 14.421 9.21 15 7.5 15C3.35786 15 0 11.6421 0 7.5C0 3.35786 3.35786 0 7.5 0C11.6421 0 15 3.35786 15 7.5C15.0001 9.14309 14.4581 10.7403 13.458 12.044ZM7.5 2C4.467 2 2 4.467 2 7.5C2.00331 10.5362 4.4638 12.9967 7.5 13C10.532 13 13 10.532 13 7.5C13 4.467 10.532 2 7.5 2Z" fill="current"/>
-              </svg>
               <span class="visually-hidden">Поиск по каталогу товаров</span>
             </label>
             <button class="visually-hidden" type="submit">Найти</button>
@@ -44,7 +41,12 @@
         </div>
         <div class="user-menu">
             <div class="user-nav">
-              <a class="user-nav-link login" href="blank.html">Войти</a>
+              <a class="user-nav-link login" href="blank.html">
+                <svg class="login-pic" width="21" height="17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14.9 8.5L6 0v6H0v5h6v6l8.9-8.5z" fill="#C5C5C5"/>
+                  <path d="M17 15h-5v2h5c2.2 0 3-1.8 3-3V3c0-1.2-.8-3-3-3h-5v2h5c.8 0 1 .7 1 1v11c0 .3-.2 1-1 1z" fill="#C5C5C5"/>
+                </svg>
+                Войти</a>
               <a class="user-nav-link registration" href="blank.html">Регистрация</a>
             </div>
         </div>
@@ -147,9 +149,9 @@
           </ul>
           <div class="footer-feedback">
             <p class="footer-feedback-text">Обратная связь: <br>
-            <a class="feedback-link">mail@htmlacademy.ru</a></p>
+            <a class="feedback-link" href="#">mail@htmlacademy.ru</a></p>
             <p class="footer-feedback-text">Разработано — <br>
-            <a class="feedback-link">htmlacademy.ru</a></p>
+            <a class="feedback-link" href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a></p>
           </div>
         </div>
       </div>
