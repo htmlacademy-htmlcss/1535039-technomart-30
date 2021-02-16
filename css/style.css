@@ -1800,6 +1800,7 @@ img {
   background-color: var(--basic-white);
   width: 620px;
   height: 282px;
+  display: none;
 }
 .cart-succes {
   font-family: "Cuprum bold", Arial, sans-serif;
