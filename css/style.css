@@ -133,9 +133,7 @@ img {
   color: var(--basic-white);
   font-size: 14px;
   line-height: 18px;
-  padding-top: 11px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding: 11px 24px 9px 24px;
   text-transform: uppercase;
   text-decoration: none;
   display: block;
@@ -654,7 +652,7 @@ img {
 .label-new.new-true {
   display: block;
   transform: translate(25px, -5px) rotate(45deg);
-  z-index: 10;
+  z-index: 2;
 }
 /* Стили для слайдера в блоке features */
 .slider {
@@ -693,6 +691,7 @@ img {
 .slide-2 {
   background-image: url("../img/decor/drill.jpg");
   background-size: cover;
+  display: none;
 }
 .slide-title,
 .slide-text {
@@ -814,7 +813,7 @@ img {
   box-shadow: 0 4px 20px var(--brand-shadow);
 }
 .product-image {
-  z-index: 10;
+  z-index: 2;
   align-self: start;
   margin-bottom: 8px;
   max-width: 184px;
@@ -1068,9 +1067,11 @@ img {
 }
 .service-guarantee {
   background: url("../img/decor/guarantee.png") no-repeat right bottom;
+  display: none;
 }
 .service-credit {
   background: url("../img/decor/credit.png") no-repeat right bottom;
+  display: none;
 }
 .service-credit .button {
   width: 195px;
@@ -1683,37 +1684,56 @@ img {
 .info-title {
   margin-bottom: 25px;
 }
+/* Общие стили модалок */
+.modal {
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  box-shadow: 0 4px 20px var(--brand-shadow);
+  border-top: 7px solid var(--basic-red);
+  box-sizing: border-box;
+}
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 11px;
+  width: 21px;
+  height: 21px;
+  background-color: transparent;
+  background-image: url("../img/icons/close.svg");
+  background-size: cover;
+  border: none;
+}
 /* стили модалки обратной связи */
 .feedback-modal {
   width: 620px;
   height: 430px;
-  position: relative;
-}
-.modal {
-  border-top: 7px solid var(--basic-red);
-  box-shadow: 0 4px 20px var(--brand-shadow);
+  display: none;
 }
 .feedback-form {
-  display: grid;
-  grid-template-areas:
-    "ni mi"
-    "ti ti"
-    "fb fb";
-  -moz-column-gap: 20px;
-  column-gap: 20px;
-  padding-top: 46px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 39px;
+  background-color: var(--basic-white);
+  margin: 0;
 }
 .name-input {
-  grid-area: ni;
   padding-left: 80px;
+  flex-grow: 1;
+  margin-right: 20px;
 }
 .mail-input {
-  grid-area: mi;
   padding-right: 80px;
+  flex-grow: 1;
 }
 .text-input {
-  grid-area: ti;
   padding: 0 80px 37px;
+  width: 100%;
 }
 .name-input,
 .mail-input,
@@ -1739,13 +1759,12 @@ img {
 }
 .modal-input {
   margin-bottom: 13px;
-  width: 220px;
   height: 38px;
+  min-width: 100%;
 }
 .modal-textarea {
   margin-bottom: 0;
   min-width: 100%;
-  max-width: 460px;
   height: 114px;
 }
 .modal-input::-webkit-input-placeholder,
@@ -1759,33 +1778,28 @@ img {
 .feedback-bottom {
   background-color: var(--modal-bg);
   background-clip: border-box;
-  grid-area: fb;
+  width: 100%;
   padding: 37px 80px;
 }
 .feedback-modal .button {
   min-width: 100%;
 }
-.modal-close {
-  position: absolute;
-  top: 21px;
-  right: 11px;
-  width: 21px;
-  height: 21px;
-  background-image: url("../img/icons/close.svg");
-  background-size: cover;
+/* Стили модалки с картой */
+.map-modal {
+  width: 940px;
+  height: 450px;
+  background-color: var(--basic-white);
+  display: none;
+}
+.map-modal iframe {
   border: none;
 }
-/* Стили блока фильтров */
-
 /* стили модалки каталога */
 .cart-modal {
+  top: -100px;
   background-color: var(--basic-white);
-  position: relative;
   width: 620px;
   height: 282px;
-}
-.cart-modal .modal-close {
-  top: 18px;
 }
 .cart-succes {
   font-family: "Cuprum bold", Arial, sans-serif;
