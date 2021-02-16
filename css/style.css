@@ -1377,10 +1377,10 @@ img {
   margin-bottom: 25px;
 }
 .filteres-group:nth-of-type(2) {
-  margin-bottom: 27px;
+  margin-bottom: 10px;
 }
 .filteres-group:last-of-type {
-  margin-bottom: 37px;
+  margin-bottom: 18px;
 }
 .filteres-type {
   font-weight: 700;
@@ -1479,11 +1479,12 @@ img {
   display: inline-flex;
   align-items: center;
   max-width: 220px;
-  display: block;
+  display: flex;
+  align-items: center;
+  min-height: 25px;
   cursor: pointer;
-}
-.vendor-item:not(:last-child) {
-  margin-bottom: 21px;
+  overflow: hidden;
+  margin-bottom: 16px;
 }
 .parameteres-list,
 .sort-parameteres,
@@ -1496,9 +1497,6 @@ img {
 }
 .supply {
   margin-bottom: 21px;
-}
-.supply-item:not(:last-child) {
-  margin-bottom: 22.5px;
 }
 .parameteres-name::before {
   content: "";
