@@ -141,6 +141,7 @@ img {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  cursor: pointer;
 }
 .button:hover,
 .button:focus {
@@ -624,6 +625,10 @@ img {
 .features-link:focus {
   background-color: var(--features-button-hover);
 }
+.features-link:focus {
+  outline: none;
+  border: 1px solid var(--basic-black);
+}
 .features-link:active {
   background-color: var(--features-button-active);
 }
@@ -809,7 +814,8 @@ img {
   justify-content: flex-end;
   align-items: center;
 }
-.product-card:hover {
+.product-card:hover,
+.product-card:focus {
   box-shadow: 0 4px 20px var(--brand-shadow);
 }
 .product-image {
@@ -840,10 +846,12 @@ img {
   backface-visibility: hidden;
   transition: transform .3s;
 }
-.product-card:hover .product-image {
+.product-card:hover .product-image,
+.product-card:focus .product-image {
   transform: rotateX(180deg);
 }
-.product-card:hover .buy-block {
+.product-card:hover .buy-block,
+.product-card:focus .buy-block {
   visibility: visible;
   transform: rotateX(0deg);
 }
@@ -1247,7 +1255,8 @@ img {
   background-color: var(--social-bluegray);
   margin-right: 1px;
 }
-.social-link:hover {
+.social-link:hover,
+.social-link:focus {
   background-color: var(--basic-red);
   background-clip: border-box;
 }
@@ -1288,6 +1297,12 @@ img {
 .feedback-link:active {
   color: var(--basic-red);
 }
+.footer-top-link:focus,
+.footer-bottom-link:focus,
+.feedback-link:focus,
+.social-link:focus {
+  outline: none;
+}
 /* Стили внутренней страницы */
 .catalog-top-wrapper {
   display: flex;
@@ -1310,10 +1325,13 @@ img {
   margin-top: 21px;
   margin-bottom: 20px;
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
 }
 .crumb {
   max-height: 18px;
+  display: flex;
+  align-items: center;
 }
 .crumb:not(:first-child) {
   margin-left: 40px;
@@ -1323,7 +1341,7 @@ img {
   content: "";
   position: absolute;
   left: -23px;
-  top: 5px;
+  top: 3px;
   width: 8px;
   height: 12px;
   background-image: url("../img/icons/right-small.svg");
@@ -1442,6 +1460,10 @@ img {
   text-align: center;
   height: 38px;
 }
+.price-input::-webkit-inner-spin-button,
+.price-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
 .price-input::-webkit-input-placeholder,
 .price-input::-moz-placeholder,
 .price-input::-ms-input-placeholder,
@@ -1498,6 +1520,11 @@ img {
 }
 .supply {
   margin-bottom: 21px;
+}
+.parameteres-check:focus + .parameteres-name:before,
+.parameteres-radio:focus + .parameteres-name:before {
+  outline: 1px solid var(--basic-black);
+  outline-offset: -1px;
 }
 .parameteres-name::before {
   content: "";
@@ -1707,6 +1734,7 @@ img {
   background-image: url("../img/icons/close.svg");
   background-size: cover;
   border: none;
+  cursor: pointer;
 }
 /* стили модалки обратной связи */
 .feedback-modal {
@@ -1733,7 +1761,7 @@ img {
 }
 .text-input {
   padding: 0 80px 37px;
-  width: 100%;
+  min-width: 100%;
 }
 .name-input,
 .mail-input,
