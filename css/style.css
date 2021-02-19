@@ -748,7 +748,7 @@ img {
 }
 /* Стили блока популярных товаров */
 .popular-products {
-  padding-bottom: 50px;
+  padding-bottom: 52px;
 }
 .section-header{
   display: flex;
@@ -778,7 +778,7 @@ img {
   width: 220px;
   min-height: 318px;
   margin-right: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 .product-card{
   font-family: "PT Sans bold", Arial, sans-serif;
@@ -1301,7 +1301,7 @@ img {
   list-style: none;
   order: -1;
   padding: 0;
-  margin: 21px 20px 20px 0;
+  margin: 21px 20px 21px 0;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -1361,10 +1361,10 @@ img {
   margin: 0;
 }
 .filteres-group:first-of-type {
-  margin-bottom: 25px;
+  margin-bottom: 26px;
 }
 .filteres-group:nth-of-type(2) {
-  margin-bottom: 10px;
+  margin-bottom: 11px;
 }
 .filteres-group:last-of-type {
   margin-bottom: 18px;
@@ -1425,6 +1425,8 @@ img {
   border: none;
   width: 95px;
   padding: 10px;
+  font-size: 17px;
+  line-height: 18px;
   text-align: center;
   height: 38px;
 }
@@ -1465,7 +1467,6 @@ img {
   display: inline-flex;
   align-items: center;
   max-width: 220px;
-  min-height: 25px;
   cursor: pointer;
   overflow: hidden;
   margin-bottom: 16px;
@@ -1485,7 +1486,7 @@ img {
 .parameteres-name::before {
   content: "";
   min-width: 27px;
-  height: 25px;
+  height: 23px;
   display: block;
   margin-right: 8px;
   background-color: var(--basix-white);
@@ -1497,6 +1498,7 @@ img {
 }
 .parameteres-radio + .parameteres-name::before {
   background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 12.5a12.5 12.5 0 1125 0 12.5 12.5 0 01-25 0zm21 0a8.5 8.5 0 10-17 0 8.5 8.5 0 0017 0z' fill='%23C5C5C5'/%3E%3C/svg%3E");
+  height: 25px;
 }
 .parameteres-check:checked + .parameteres-name::before {
   background-image: url("data:image/svg+xml,%3Csvg width='27' height='23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.3 7.5l-2.8 2.8 7.7 7.8 14-14-2.9-2.8-11 11.1-5-5z' fill='%23C5C5C5'/%3E%3Cpath d='M21 20c0 .5-.5 1-1 1H3a1 1 0 01-1-1V3c0-.5.5-1 1-1h17L21.4.4A3 3 0 0020 0H3a3 3 0 00-3 3v17a3 3 0 003 3h17a3 3 0 003-3v-9.8l-2 2V20z' fill='%23C5C5C5'/%3E%3C/svg%3E");
@@ -1620,7 +1622,7 @@ img {
   align-content: stretch;
   flex-wrap: wrap;
   gap: 10px;
-  padding: 28px 0 0;
+  padding: 30px 0 0;
   margin: 0 0 59px;
 }
 .page-link {
@@ -1657,8 +1659,8 @@ img {
 /* Стили блока info */
 .info {
   background-color: var(--light-background);
-  padding-top: 64px;
-  padding-bottom: 68px;
+  padding-top: 63px;
+  padding-bottom: 69px;
 }
 .info-title {
   margin-bottom: 25px;
