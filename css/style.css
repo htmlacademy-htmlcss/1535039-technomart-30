@@ -328,8 +328,10 @@ img {
   padding: 42.5px 0 0 30px;
 }
 .header-contacts {
-  padding-top: 46px;
+  padding: 46px 0 0;
+  margin: 0;
   justify-self: start;
+  list-style: none;
 }
 .header-phone {
   font-family: "Cuprum bold", Arial, sans-serif;
@@ -646,8 +648,7 @@ img {
   padding: 0;
   position: relative;
 }
-.slide-1,
-.slide-2 {
+.slide{
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
@@ -657,8 +658,7 @@ img {
   justify-content: space-between;
   position: relative;
 }
-.slide-1::before,
-.slide-2::before {
+.slide::before {
   content: "";
   position: absolute;
   top: 0;
@@ -716,12 +716,13 @@ img {
   margin: 0;
   padding: 0;
   border: 2px solid var(--basic-white);
-  background-color: var(--basic-red);
-  background-clip: content-box;
+  background-color: var(--basic-white);
   cursor: pointer;
 }
 .slide-toggle:disabled {
-  background-color: var(--basic-white);
+  background-color: var(--basic-red);
+  background-clip: content-box;
+  cursor: auto;
 }
 .slide-arrow {
   position: absolute;
@@ -750,7 +751,7 @@ img {
 .popular-products {
   padding-bottom: 52px;
 }
-.section-header{
+.section-header {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -780,7 +781,7 @@ img {
   margin-right: 20px;
   margin-bottom: 18px;
 }
-.product-card{
+.product-card {
   font-family: "PT Sans bold", Arial, sans-serif;
   font-weight: 700;
   height: 100%;
@@ -812,7 +813,7 @@ img {
   transition: transform .3s;
   object-fit: contain;
 }
-.buy-block{
+.buy-block {
   visibility: hidden;
   font-size: 14px;
   line-height: 18px;
@@ -1133,11 +1134,15 @@ img {
   margin-top: auto;
   margin-bottom: 32px;
 }
-.map-image {
+.map-link {
+  display: block;
   margin-bottom: 25px;
+  font-size: 0;
+  line-height: 0;
+}
+.map-image {
   width: 300px;
   height: 158px;
-  cursor: pointer;
 }
 .contacts .button {
   min-width: 100%;
@@ -1233,14 +1238,16 @@ img {
   justify-content: center;
   flex-wrap: wrap;
 }
+.social-list-item {
+  border-radius: 50%;
+  overflow: hidden;
+}
 .social-link {
   text-decoration: none;
   color: inherit;
   display: block;
   width: 44px;
   height: 44px;
-  border-radius: 50%;
-  background-color: var(--social-bluegray);
   margin-right: 1px;
 }
 .social-link:hover .social-bg,
