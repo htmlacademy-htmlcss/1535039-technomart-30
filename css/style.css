@@ -173,7 +173,7 @@ img {
   line-height: 0;
 }
 .header-logo {
-  width: 220px;
+  min-width: 220px;
   padding-top: 12px;
   padding-bottom: 17px;
 }
@@ -187,7 +187,7 @@ img {
 .input-search {
   background-color: transparent;
   border: none;
-  width: 270px;
+  min-width: 270px;
   height: 100%;
   padding: 9px 9px 9px 42px;
   font-size: 18px;
@@ -240,10 +240,9 @@ img {
 .order {
   color: var(--basic-white);
   text-decoration: none;
-  width: 150px;
+  min-width: 150px;
   color: var(--basic-white);
   text-decoration: none;
-  width: 150px;
   padding: 9px 5px 9px 0;
   white-space: nowrap;
   overflow: hidden;
@@ -323,7 +322,7 @@ img {
   line-height: 23px;
   font-weight: 400;
   color: var(--basic-red);
-  width: 230px;
+  max-width: 230px;
   margin: 0;
   padding: 42.5px 0 0 30px;
 }
@@ -343,7 +342,6 @@ img {
   border: 3px solid var(--basic-white);
   text-decoration: none;
   display: block;
-  min-width: 270px;
   min-height: 45px;
   padding: 4px 42px 5px 71px;
   margin-bottom: 3px;
@@ -395,7 +393,6 @@ img {
   margin-right: 6px;
   margin-top: 2px;
   min-width: 20px;
-  height: 17px;
 }
 .login {
   min-width: 120px;
@@ -416,18 +413,16 @@ img {
 }
 .profile-pic {
   min-width: 20px;
-  height: 18px;
   margin-top: 1px;
   margin-right: 21px;
 }
 .logout {
-  width: 47px;
+  min-width: 47px;
   padding-left: 10px;
   padding-right: 17px;
 }
 .logout-pic {
   min-width: 20px;
-  height: 17px;
   margin-top: 2px;
 }
 .user-options {
@@ -527,8 +522,7 @@ img {
 }
 .features-wrapper {
   display: grid;
-  grid-template-columns: repeat(3, 300px);
-  grid-template-rows: 123px 123px 123px;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   grid-template-areas:
     "fm ft ftc"
@@ -541,8 +535,9 @@ img {
   margin: 0;
 }
 .features-item {
+  min-height: 123px;
   display: flex;
-  justify-content: stretch;
+  justify-content: space-between;
   position: relative;
   overflow: hidden;
   padding: 20px 0 21px 0;
@@ -550,50 +545,57 @@ img {
 .features-materials {
   background-color: var(--special-yellow);
   grid-area: fm;
+  padding-right: 43px;
 }
 .features-tools {
   background-color: var(--special-blue);
   grid-area: ft;
+  padding-right: 31px;
 }
 .features-technics {
   background-color: var(--special-lilac);
   grid-area: ftc;
+  padding-right: 31px;
 }
 .features-discount {
   background-color: var(--special-greenlight);
   grid-area: fd;
+  padding-right: 45px;
   padding-bottom: 23px;
 }
 .features-delivery {
   background-color: var(--special-yellowlight);
   grid-area: fdv;
   padding-bottom: 22px;
+  padding-right: 31px;
 }
 .features-desc {
   font-family: "Cuprum bold", Arial, sans-serif;
   font-weight: 700;
   font-size: 24px;
   line-height: 30px;
-  width: 160px;
+  min-width: 158px;
   margin: 0;
   padding-left: 23px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: stretch;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: clip;
 }
 .features-link {
-  font-weight: normal;
+  font-weight: 400;
   color: var(--basic-white);
   font-size: 14px;
   line-height: 18px;
   text-decoration: none;
   text-transform: uppercase;
   background-color: var(--features-button-bg);
-  display: block;
-  width: 135px;
+  width: 100%;
+  max-width: 135px;
+  min-height: 38px;
   padding: 10px 5px;
   text-align: center;
   overflow: hidden;
@@ -614,30 +616,35 @@ img {
 .features-image {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 140px;
+  justify-content: flex-end;
+  max-width: 140px;
+  max-height: 100%;
   padding-top: 4px;
-  padding-right: 2px;
+  margin-left: 10px;
+}
+.features-image img {
+  max-height: 100%;
 }
 .label-new {
-  width: 100px;
-  height: 30px;
+  min-width: 100px;
   color: var(--basic-white);
   background-color: var(--basic-red);
   text-transform: uppercase;
   font-size: 14px;
   line-height: 18px;
   text-align: center;
+  white-space: nowrap;
+
   position: absolute;
   top: 0;
   right: 0;
-  padding-top: 8px;
+  padding: 8px 4px 4px;
+  transform: translate(26px, -7px) rotate(45deg);
+  z-index: 2;
   display: none;
 }
 .label-new.new-true {
   display: block;
-  transform: translate(26px, -7px) rotate(45deg);
-  z-index: 2;
 }
 /* Стили для слайдера в блоке features */
 .slider {
@@ -648,7 +655,7 @@ img {
   padding: 0;
   position: relative;
 }
-.slide{
+.slide {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
@@ -656,16 +663,8 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: start;
   position: relative;
-}
-.slide::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 105px;
-  background-color: var(--slider-bg);
 }
 .slide-1 {
   background-image: url("../img/decor/perforator.jpg");
@@ -701,9 +700,7 @@ img {
 }
 .slide-toggler {
   position: absolute;
-  width: 30px;
   display: flex;
-  justify-content: space-between;
   left: 50%;
   bottom: 36px;
   transform: translateX(-50%);
@@ -718,6 +715,9 @@ img {
   border: 2px solid var(--basic-white);
   background-color: var(--basic-white);
   cursor: pointer;
+}
+.slide-toggle:first-child {
+  margin-right: 10px;
 }
 .slide-toggle:disabled {
   background-color: var(--basic-red);
@@ -744,7 +744,6 @@ img {
   transform: rotate(180deg);
 }
 .slide-button {
-  width: 192px;
   max-width: 260px;
 }
 /* Стили блока популярных товаров */
@@ -776,7 +775,7 @@ img {
   margin-right: -20px;
 }
 .product-list-item {
-  width: 220px;
+  min-width: 220px;
   min-height: 318px;
   margin-right: 20px;
   margin-bottom: 18px;
@@ -800,39 +799,36 @@ img {
   box-shadow: 0 4px 20px var(--brand-shadow);
 }
 .product-image {
-  z-index: 2;
   align-self: center;
-  width: 184px;
-  max-height: 164px;
+  max-width: 184px;
   flex-grow: 1;
   margin-bottom: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  backface-visibility: hidden;
-  transition: transform .3s;
   object-fit: contain;
 }
 .buy-block {
-  visibility: hidden;
   font-size: 14px;
   line-height: 18px;
+  width: 100%;
   text-transform: uppercase;
-  grid-row: 1;
   position: absolute;
   top: 38px;
-  transform: rotateX(-180deg);
-  backface-visibility: hidden;
-  transition: transform .3s;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background-color: var(--basic-white);
+  opacity: 0;
 }
 .product-card:hover .product-image,
-.product-card:focus .product-image {
-  transform: rotateX(180deg);
+.buy-block:focus-within + .product-image {
+  opacity: 0;
 }
 .product-card:hover .buy-block,
-.product-card:focus .buy-block {
-  visibility: visible;
-  transform: rotateX(0deg);
+.buy-block:focus-within {
+  opacity: 1;
+  z-index: 2;
 }
 .product-title {
   font-family: "PT Sans bold", Arial, sans-serif;
@@ -878,7 +874,7 @@ img {
   max-width: 200px;
   min-height: 38px;
   padding: 10px 22px 10px 32px;
-  margin-left: 9px;
+  margin-left: 11px;
   margin-bottom: 20px;
   background-image: url("data:image/svg+xml,%3Csvg width='141' height='38' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M121.6 0H3a3 3 0 00-3 3v32a3 3 0 003 3h118.6L141 19 121.6 0z' fill='%23EE3643'/%3E%3C/svg%3E");
   background-size: cover;
@@ -887,22 +883,26 @@ img {
 }
 .bookmark-button,
 .buy-button {
-  width: 135px;
-  height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-height: 38px;
   border-radius: 2px;
+  margin-left: 41px;
+  margin-right: 44px;
+  display: flex;
+  justify-content: center;
 }
 .bookmark-button {
   border: 3px solid var(--basic-green);
   background-color: var(--basic-white);
   color: var(--bluegray);
   text-decoration: none;
+  padding: 7px 10px;
 }
 .bookmark-button:hover,
 .bookmark-button:focus {
   border-color: var(--bluegray);
+}
+.bookmark-button:active {
+  opacity: 0.5;
 }
 .buy-button {
   color: var(--basic-white);
@@ -910,6 +910,15 @@ img {
   box-shadow: inset 0px -3px 0px var(--green-shadow);
   background-color: var(--basic-green);
   margin-bottom: 10px;
+  padding: 10px;
+}
+.buy-button::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background-image: url("../img/icons/cart.svg");
+  opacity: 0.3;
+  margin-right: 8px;
 }
 .buy-button:hover,
 .buy-button:focus {
@@ -917,9 +926,6 @@ img {
 }
 .buy-button:active {
   background-color: var(--green-button-active);
-}
-.bookmark-button:active {
-  opacity: 0.5;
 }
 /* Стили блока популярных брендов */
 .popular-brands {
@@ -937,8 +943,8 @@ img {
   justify-content: start;
 }
 .brands-list-item {
-  height: 145px;
-  width: 220px;
+  min-height: 145px;
+  min-width: 220px;
   margin: 0 20px 20px 0;
   padding: 5px;
   border: 1px solid var(--card-border);
@@ -948,6 +954,7 @@ img {
   justify-content: center;
   align-items: center;
   width: 100%;
+  max-width: 208px;
   height: 100%;
   object-fit: contain;
 }
@@ -989,11 +996,12 @@ img {
 }
 .services-names {
   list-style: none;
-  margin: 0;
+  margin: 0 80px 0 0;
   position: relative;
   justify-self: start;
   align-self: start;
   padding: 3px 0 0;
+  width: 100%;
 }
 .services-names::after {
   content: "";
@@ -1010,7 +1018,7 @@ img {
   font-weight: 700;
   font-size: 21px;
   line-height: 30px;
-  width: 240px;
+  width: 100%;
   min-height: 61px;
   text-align: left;
   color: var(--basic-white);
@@ -1042,8 +1050,11 @@ img {
   min-width: 620px;
 }
 .service-desc {
-  height: 283px;
+  min-height: 283px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
   padding-bottom: 3px;
   background-clip: content-box;
 }
@@ -1071,7 +1082,7 @@ img {
   display: none;
 }
 .service-credit .button {
-  width: 195px;
+  min-width: 195px;
   margin-top: 26px;
 }
 /* Grid нижнего блока */
@@ -1089,11 +1100,12 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: start;
   min-height: 100%;
 }
 /* Стили блока "о компании" */
 .about {
-  width: 460px;
+  max-width: 460px;
   margin-right: 20px;
 }
 .about .text {
@@ -1124,11 +1136,12 @@ img {
   margin-bottom: 12px;
 }
 .about .button {
-  width: 220px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 /* Стили блока "Контакты" */
 .contacts {
-  width: 300px;
+  max-width: 300px;
 }
 .contacts .text {
   margin-top: auto;
@@ -1141,8 +1154,8 @@ img {
   line-height: 0;
 }
 .map-image {
-  width: 300px;
-  height: 158px;
+  width: 100%;
+  max-height: 158px;
 }
 .contacts .button {
   min-width: 100%;
@@ -1419,23 +1432,25 @@ img {
 }
 .price-diapason {
   display: flex;
-  justify-content: space-between;
+  justify-content: stretch;
 }
 .price-text {
   font-size: 16px;
   line-height: 18px;
+  text-align: center;
   color: var(--price-text);
   align-self: center;
+  flex-grow: 1;
 }
 .price-input {
   background-color: var(--catalog-background);
   border: none;
-  width: 95px;
+  max-width: 95px;
+  max-height: 38px;
   padding: 10px;
   font-size: 17px;
   line-height: 18px;
   text-align: center;
-  height: 38px;
 }
 .price-input::-webkit-inner-spin-button,
 .price-input::-webkit-outer-spin-button {
@@ -1445,6 +1460,7 @@ img {
   font-family: inherit;
   font-size: 17px;
   line-height: 18px;
+  padding: 0;
   color: var(--basic-black);
 }
 .stripe {
@@ -1477,6 +1493,7 @@ img {
   cursor: pointer;
   overflow: hidden;
   margin-bottom: 16px;
+  padding-right: 5px;
 }
 .parameteres-list,
 .sort-parameteres,
@@ -1499,6 +1516,9 @@ img {
   background-color: var(--basix-white);
   background-position: left center;
   background-repeat: no-repeat;
+}
+.parameteres-item:focus-within .parameteres-name {
+  font-weight: 700;
 }
 .parameteres-check + .parameteres-name::before {
   background-image: url("data:image/svg+xml,%3Csvg width='23' height='23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3 0h17a3 3 0 013 3v17a3 3 0 01-3 3H3a3 3 0 01-3-3V3a3 3 0 013-3zm18 3c0-.5-.5-1-1-1H3a1 1 0 00-1 1v17c0 .5.5 1 1 1h17c.5 0 1-.5 1-1V3z' fill='%23C5C5C5'/%3E%3C/svg%3E");
@@ -1535,12 +1555,11 @@ img {
   line-height: 18px;
   text-align: center;
   padding: 10px;
-  width: 100%;
+  min-width: 100%;
   border: 1px solid var(--button-border);
   background-color: var(--basic-white);
   text-transform: uppercase;
   cursor: pointer;
-  max-width: 220px;
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1571,6 +1590,8 @@ img {
 }
 .sort-title {
   margin: 0 auto 0 0;
+  font-size: 13px;
+  font-weight: 400;
 }
 .sort-parameteres {
   margin-right: 46px;
@@ -1702,13 +1723,13 @@ img {
   width: 620px;
   height: 430px;
   display: none;
+  background-color: var(--basic-white);
 }
 .feedback-form {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding-top: 39px;
-  background-color: var(--basic-white);
   margin: 0;
 }
 .name-input {
@@ -1748,13 +1769,13 @@ img {
 }
 .modal-input {
   margin-bottom: 13px;
-  height: 38px;
+  max-height: 38px;
   min-width: 100%;
 }
 .modal-textarea {
   margin-bottom: 0;
   min-width: 100%;
-  height: 114px;
+  min-height: 114px;
 }
 .modal-input::placeholder {
   font-size: 13px;
@@ -1769,6 +1790,7 @@ img {
 }
 .feedback-modal .button {
   min-width: 100%;
+  min-height: 38px;
 }
 /* Стили модалки с картой */
 .map-modal {
