@@ -1,3 +1,4 @@
+/* скрипты модалок */
 const feedbackLink = document.querySelector(".feedback-button");
 const mapLink = document.querySelector(".map-link");
 const buyLink = document.querySelectorAll(".buy-button");
@@ -19,8 +20,9 @@ for (i = 0; i < buyLink.length; i++) {
     closeModal();
     closeEsc();
     outClickClose();
-  }
-)};
+  })
+};
+
 feedbackLink.addEventListener("click", function (evt) {
   evt.preventDefault();
   feedbackModal.classList.add("modal-show");
@@ -32,6 +34,7 @@ feedbackLink.addEventListener("click", function (evt) {
   outClickClose();
   modalInput.forEach(n => n.classList.remove("input-error"));
 });
+
 mapLink.addEventListener("click", function (evt) {
   evt.preventDefault();
   mapModal.classList.add("modal-show");
@@ -40,7 +43,8 @@ mapLink.addEventListener("click", function (evt) {
   closeEsc();
   outClickClose();
 });
-/* проверка формы */
+/* прове
+рка формы */
 feedbackForm.addEventListener("submit", function (evt) {
   modalInput.forEach(n => n.classList.remove("input-error"));
   let sumError = 0;
@@ -58,7 +62,8 @@ feedbackForm.addEventListener("submit", function (evt) {
   } else {
     modalInput.forEach(n => n.value = "");
   };
-})
+});
+
 /* Закрытие модалок кнопкой */
 function closeModal() {
   for (i = 0; i < modal.length; i++) {
@@ -73,6 +78,7 @@ function closeModal() {
     }
   }
 };
+
 /* Закрытие по Esc */
 function closeEsc() {
   for (i = 0; i < modal.length; i++) {
@@ -88,7 +94,8 @@ function closeEsc() {
     }
   }
 };
-/* закрытие по нажатию вне модалки */
+
+/* закрытие по клику вне модалки */
 function outClickClose() {
   for (i = 0; i < modal.length; i++) {
     if (modal[i].classList.contains("modal-show")) {
@@ -101,11 +108,13 @@ function outClickClose() {
     }
   }
 };
+
 /* блокируем задний фон */
 function afterShow() {
   modalBg.classList.add("modal-bg-show");
   pageBody.classList.add("scroll-block");
 };
+
 /* разблокируем задний фон */
 function afterClose() {
   modalBg.classList.remove("modal-bg-show");
@@ -113,3 +122,72 @@ function afterClose() {
   modalInput.forEach(n => n.classList.remove("input-error"));
 };
 
+/* скрипты слайдеров */
+const allSlides = document.querySelectorAll(".slide");
+const arrowPrev = document.querySelector(".slide-arrow-previous");
+const arrowNext = document.querySelector(".slide-arrow-next");
+const toggles = document.querySelectorAll(".slide-toggle");
+
+toggleDisable();
+/* переключение стрелками */
+arrowNext.addEventListener("click", function (evt) {
+  evt.preventDefault();
+  nextSlide();
+  toggleDisable();
+});
+
+arrowPrev.addEventListener("click", function (evt) {
+  evt.preventDefault();
+  prevSlide();
+  toggleDisable();
+});
+
+/* переключение кнопкой */
+for (i = 0; i < toggles.length; i++) {
+  let toggle = toggles[i];
+  let slide = allSlides[i];
+  toggle.addEventListener("click", function (evt) {
+    toggles.forEach(n => n.removeAttribute("disabled", "disabled"));
+    toggle.setAttribute("disabled", "disabled");
+    allSlides.forEach(n => n.classList.remove("slide-shown"));
+    slide.classList.add("slide-shown");
+  })
+};
+
+/* деактивация кнопки */
+function toggleDisable() {
+  for (i = 0; i < allSlides.length; i++) {
+    if (allSlides[i].classList.contains("slide-shown")) {
+      toggles.forEach(n => n.removeAttribute("disabled", "disabled"));
+      toggles[i].setAttribute("disabled", "disabled");
+    }
+  }
+};
+/* следующий слайд */
+function nextSlide() {
+  for (i = 0; i < allSlides.length; i++) {
+    if (allSlides[i].classList.contains("slide-shown")) {
+      allSlides[i].classList.remove("slide-shown");
+      if (!allSlides[i + 1]) {
+        allSlides[0].classList.add("slide-shown");
+      } else {
+        allSlides[i + 1].classList.add("slide-shown");
+      }
+      break;
+    }
+  }
+};
+/* предыдущийслайд */
+function prevSlide() {
+  for (i = allSlides.length - 1; i >= 0; i--) {
+    if (allSlides[i].classList.contains("slide-shown")) {
+      allSlides[i].classList.remove("slide-shown");
+      if (!allSlides[i - 1]) {
+        allSlides[allSlides.length - 1].classList.add("slide-shown");
+      } else {
+        allSlides[i - 1].classList.add("slide-shown");
+      }
+      break;
+    }
+  }
+};

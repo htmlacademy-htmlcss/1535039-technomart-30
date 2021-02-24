@@ -669,11 +669,15 @@ img {
 .slide-1 {
   background-image: url("../img/decor/perforator.jpg");
   background-size: cover;
+  display: none;
 }
 .slide-2 {
   background-image: url("../img/decor/drill.jpg");
   background-size: cover;
   display: none;
+}
+.slide-shown {
+  display: flex;
 }
 .slide-title,
 .slide-text {
