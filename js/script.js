@@ -10,6 +10,7 @@ const modalBg = document.querySelector(".modal-bg");
 const pageBody = document.querySelector(".page-body");
 const modal = document.querySelectorAll(".modal");
 const modalInput = document.querySelectorAll(".modal-field");
+const inputEmail = document.querySelector("[name=email]")
 
 /* Открываем модалки */
 for (i = 0; i < buyLink.length; i++) {
@@ -43,17 +44,24 @@ mapLink.addEventListener("click", function (evt) {
   closeEsc();
   outClickClose();
 });
-/* прове
-рка формы */
+/* проверка формы */
 feedbackForm.addEventListener("submit", function (evt) {
   modalInput.forEach(n => n.classList.remove("input-error"));
   let sumError = 0;
+  console.log("адрес " + inputEmail.value);
+  let email = validateEmail(inputEmail.value);
+  console.log("проверка почты " + email);
   for (i = 0; i < modalInput.length; i++) {
     if (!modalInput[i].value) {
       modalInput[i].classList.add("input-error");
       sumError += 1;
     }
   };
+  if (!email) {
+    inputEmail.classList.add("input-error");
+    sumError += 1;
+  };
+  console.log("всего ошибок " + sumError);
   if (sumError > 0) {
     evt.preventDefault();
     feedbackModal.classList.remove("feedback-error");
@@ -63,6 +71,12 @@ feedbackForm.addEventListener("submit", function (evt) {
     modalInput.forEach(n => n.value = "");
   };
 });
+
+/* проверка email */
+function validateEmail(email) {
+    const re = /.+@.+\..+/i;
+    return re.test(String(email).toLowerCase());
+}
 
 /* Закрытие модалок кнопкой */
 function closeModal() {
@@ -191,3 +205,36 @@ function prevSlide() {
     }
   }
 };
+
+/* Слайдер в блоке сервисы */
+const services = document.querySelectorAll(".service-name");
+const descriptions = document.querySelectorAll(".service-desc");
+const servicesNames = document.querySelector(".services-names");
+const servicesDescs = document.querySelector(".services-descs");
+
+servicesNames.classList.remove("services-names-hide");
+servicesDescs.classList.remove("services-descs-wide");
+descriptions.forEach(elem => {
+  if (elem != descriptions[0]) {
+    elem.classList.remove("service-desc-show");
+  }
+});
+
+services.forEach(n => n.addEventListener("click", serviceToggle));
+
+function serviceToggle() {
+  services.forEach(elem => {
+    if (!this.elem) {
+      elem.classList.remove("service-name-active");
+    }
+    !this.classList.add("service-name-active");
+  });
+  for (i = 0; i < services.length; i++) {
+    if (services[i].classList.contains('service-name-active')) {
+      descriptions.forEach(n => n.classList.remove("service-desc-show"));
+      descriptions[i].classList.add("service-desc-show");
+    }
+  }
+};
+
+

@@ -1017,6 +1017,12 @@ img {
   transform: translateY(-50%);
   background-image: url("../img/decor/shadow.png");
 }
+.services-names-hide {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  margin: 0;
+}
 .service-name {
   font-family: "Cuprum bold", Arial, sans-serif;
   font-weight: 700;
@@ -1053,6 +1059,10 @@ img {
   padding: 0;
   min-width: 620px;
 }
+.services-descs-wide {
+  display: flex;
+  min-height: 500px;
+}
 .service-desc {
   min-height: 283px;
   overflow: hidden;
@@ -1076,6 +1086,7 @@ img {
 }
 .service-delivery {
   background: url("../img/decor/delivery.png") no-repeat right bottom;
+  display: none;
 }
 .service-guarantee {
   background: url("../img/decor/guarantee.png") no-repeat right bottom;
@@ -1084,6 +1095,9 @@ img {
 .service-credit {
   background: url("../img/decor/credit.png") no-repeat right bottom;
   display: none;
+}
+.service-desc-show {
+  display: flex;
 }
 .service-credit .button {
   min-width: 195px;
