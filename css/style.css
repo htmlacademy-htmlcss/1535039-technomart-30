@@ -114,7 +114,7 @@ img {
   padding: 0;
   overflow: hidden;
   border: 0;
-  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
 }
 .container {
   max-width: 960px;
@@ -669,11 +669,15 @@ img {
 .slide-1 {
   background-image: url("../img/decor/perforator.jpg");
   background-size: cover;
+  display: none;
 }
 .slide-2 {
   background-image: url("../img/decor/drill.jpg");
   background-size: cover;
   display: none;
+}
+.slide-shown {
+  display: flex;
 }
 .slide-title,
 .slide-text {
@@ -1013,6 +1017,12 @@ img {
   transform: translateY(-50%);
   background-image: url("../img/decor/shadow.png");
 }
+.services-names-hide {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  margin: 0;
+}
 .service-name {
   font-family: "Cuprum bold", Arial, sans-serif;
   font-weight: 700;
@@ -1049,6 +1059,10 @@ img {
   padding: 0;
   min-width: 620px;
 }
+.services-descs-wide {
+  display: flex;
+  min-height: 500px;
+}
 .service-desc {
   min-height: 283px;
   overflow: hidden;
@@ -1072,6 +1086,7 @@ img {
 }
 .service-delivery {
   background: url("../img/decor/delivery.png") no-repeat right bottom;
+  display: none;
 }
 .service-guarantee {
   background: url("../img/decor/guarantee.png") no-repeat right bottom;
@@ -1080,6 +1095,9 @@ img {
 .service-credit {
   background: url("../img/decor/credit.png") no-repeat right bottom;
   display: none;
+}
+.service-desc-show {
+  display: flex;
 }
 .service-credit .button {
   min-width: 195px;
@@ -1694,6 +1712,17 @@ img {
   margin-bottom: 25px;
 }
 /* Общие стили модалок */
+.modal-bg-show {
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.scroll-block {
+  overflow: hidden;
+}
 .modal {
   z-index: 3;
   position: fixed;
@@ -1722,8 +1751,14 @@ img {
 .feedback-modal {
   width: 620px;
   height: 430px;
-  display: none;
+  max-width: 100%;
   background-color: var(--basic-white);
+  display: none;
+}
+.plug-page .feedback-modal {
+  display: block;
+  position: unset;
+  margin-bottom: 30px;
 }
 .feedback-form {
   display: flex;
@@ -1731,6 +1766,18 @@ img {
   justify-content: space-between;
   padding-top: 39px;
   margin: 0;
+}
+.modal-field {
+  border: 2px solid var(--button-border-hover);
+  font-family: "Pt Sans", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 24px;
+  border-radius: 2px;
+  padding: 7px 8px 7px 12px;
+}
+.input-error {
+  border: 2px solid var(--red-button-active);
 }
 .name-input {
   padding-left: 80px;
@@ -1756,16 +1803,6 @@ img {
   font-size: 18px;
   line-height: 24px;
   margin-bottom: 11px;
-}
-.modal-input,
-.modal-textarea {
-  font-family: "Pt Sans", Arial, sans-serif;
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 24px;
-  border: 2px solid var(--button-border-hover);
-  border-radius: 2px;
-  padding: 7px 8px 7px 12px;
 }
 .modal-input {
   margin-bottom: 13px;
@@ -1796,6 +1833,7 @@ img {
 .map-modal {
   width: 940px;
   height: 450px;
+  max-width: 100%;
   background-color: var(--basic-white);
   display: none;
 }
@@ -1851,4 +1889,60 @@ img {
 }
 .button-cont {
   margin-left: 10px;
+}
+.modal-show {
+  display: block;
+  animation: appearance linear .15s;
+}
+.feedback-error {
+  animation: feedbackerror 1.5s;
+}
+.modal-closing {
+  animation: closing .15s forwards;
+}
+/* Анимации */
+@keyframes appearance {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(.8);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes feedbackerror {
+  from {
+    box-shadow: 0 0 5px 2px var(--basic-red);
+  }
+  15% {
+    box-shadow: 0 0 30px 20px var(--basic-red);
+  }
+  30% {
+    box-shadow: 0 0 15px 5px var(--basic-red);
+  }
+  45% {
+    box-shadow: 0 0 30px 20px var(--basic-red);
+  }
+  60% {
+    box-shadow: 0 0 15px 5px var(--basic-red);
+  }
+  75% {
+    box-shadow: 0 0 30px 20px var(--basic-red);
+  }
+  90% {
+    box-shadow: 0 0 5px 2px var(--basic-red);
+  }
+  to {}
+}
+@keyframes closing {
+  from {}
+  to {
+    transform: scale(0);
+    opacity: 0;
+    display: none;
+  }
 }
