@@ -114,7 +114,7 @@ img {
   padding: 0;
   overflow: hidden;
   border: 0;
-  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
 }
 .container {
   max-width: 960px;
@@ -1755,6 +1755,11 @@ img {
   background-color: var(--basic-white);
   display: none;
 }
+.plug-page .feedback-modal {
+  display: block;
+  position: unset;
+  margin-bottom: 30px;
+}
 .feedback-form {
   display: flex;
   flex-wrap: wrap;
@@ -1886,7 +1891,7 @@ img {
   margin-left: 10px;
 }
 .modal-closing {
-  animation: appearance linear .2s reverse;
+  animation: closing 1s;
 }
 .modal-show {
   display: block;
@@ -1910,7 +1915,7 @@ img {
   }
 }
 @keyframes feedbackerror {
-  form {
+  from {
     box-shadow: 0 0 5px 2px var(--basic-red);
   }
   15% {

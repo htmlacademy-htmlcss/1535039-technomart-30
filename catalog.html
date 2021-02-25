@@ -35,7 +35,7 @@
     <div class="header-middle">
       <div class="container header-middle-wrapper">
         <p class="header-description">Интернет-магазин строительных материалов и&nbsp;инструментов для ремонта</p>
-        <ul class="header-contacts" aria-label="Контакты интернет-магазина">
+        <ul class="header-contacts">
           <li class="header-contacts-item">
             <a class="header-phone" href="tel:+78125550555">+7 (812) 555-05-55</a>
           </li>
@@ -67,7 +67,7 @@
     </div>
     <nav class="main-navigation">
         <div class="container">
-          <ul class="site-nav" aria-label="Главное меню">
+          <ul class="site-nav">
             <li class="site-nav-item"><a class="site-nav-link" href="index.html">Главная</a></li>
             <li class="site-nav-item"><a class="site-nav-link" href="blank.html">Компания</a></li>
             <li class="site-nav-item"><a class="site-nav-link">Каталог</a></li>
@@ -112,8 +112,8 @@
             <div class="range-price">
               <div class="scale">
                 <div class="bar" style="width: 50%; margin-left: 0%"></div>
-                <div class="toggle toggle-min" tabindex="0" style="left: 0%" role=""></div>
-                <div class="toggle toggle-max" tabindex="0" style="left: 50%" role=""></div>
+                <div class="toggle toggle-min" tabindex="0" style="left: 0%" role="button"></div>
+                <div class="toggle toggle-max" tabindex="0" style="left: 50%" role="button"></div>
               </div>
             </div>
             <div class="price-diapason">
@@ -341,11 +341,11 @@
             </li>
           </ul>
         </section>
-        <ul class="pagination" aria-label="Навигация по страницам каталога">
+        <ul class="pagination">
           <li class="number-page"><a class="page-link current-page">1</a></li>
-          <li class="number-page"><a class="page-link" href="#">2</a></li>
-          <li class="number-page"><a class="page-link" href="#">3</a></li>
-          <li class="number-page"><a class="page-link page-next" href="#">Следующая</a></li>
+          <li class="number-page"><a class="page-link" href="#" aria-label=" Первая каталога">2</a></li>
+          <li class="number-page"><a class="page-link" href="#" aria-label="Втораястраница каталога">3</a></li>
+          <li class="number-page"><a class="page-link page-next" href="#" aria-label=" Следующаястраница каталога">Следующая</a></li>
         </ul>
       </section>
     </div>
@@ -362,7 +362,7 @@
   <footer class="main-footer">
     <section class="footer-top">
       <div class="container">
-        <siv class="footer-top-wrapper">
+        <div class="footer-top-wrapper">
           <a class="logo footer-logo" href="index.html">
             <img src="img/logo/logo.svg" alt="Интернет-магазин Техномарт" width="138" height="23">
           </a>
@@ -383,8 +383,8 @@
               <a class="footer-top-link" href="blank.html">Контакты</a>
             </li>
           </ul>
-        </siv>
-        <siv class="footer-top-wrapper">
+        </div>
+        <div class="footer-top-wrapper">
           <div class="footer-contacts">
             <address class="footer-addres">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</address>
             <a class="footer-phone" href="tel:+78125550555">+7 (812) 555-05-55</a>
@@ -403,7 +403,7 @@
               <a class="footer-bottom-link" href="blank.html">Спецпредложения</a>
             </li>
           </ul>
-        </siv>
+        </div>
       </div>
     </section>
     <section class="footer-bottom">
@@ -411,7 +411,7 @@
         <div class="footer-bottom-wrapper">
           <p class="footer-copyright">© 2010–2019 Компания «Техномарт» <br>
             Все права защищены</p>
-          <ul class="social-list" aria-label="Наши социальные сети">
+          <ul class="social-list">
             <li class="social-list-item">
               <a class="social-link vk" href="#">
                 <span class="visually-hidden">Вконтакте</span>
