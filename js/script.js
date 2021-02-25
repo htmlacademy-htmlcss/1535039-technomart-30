@@ -219,10 +219,15 @@ services.forEach(n => n.addEventListener("click", serviceToggle));
 
 function serviceToggle() {
   services.forEach(elem => {
+    elem.classList.remove("service-name-active");
     if (!this.elem) {
-      elem.classList.remove("service-name-active");
+      elem.removeAttribute("aria-pressed");
+      elem.setAttribute("aria-pressed", "false");
+      elem.removeAttribute("tabindex");
     }
     !this.classList.add("service-name-active");
+    !this.setAttribute("aria-pressed", "true");
+    !this.setAttribute("tabindex", "-1");
   });
   for (i = 0; i < services.length; i++) {
     if (services[i].classList.contains('service-name-active')) {
