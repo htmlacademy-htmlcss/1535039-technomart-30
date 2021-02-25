@@ -10,7 +10,7 @@ const modalBg = document.querySelector(".modal-bg");
 const pageBody = document.querySelector(".page-body");
 const modal = document.querySelectorAll(".modal");
 const modalInput = document.querySelectorAll(".modal-field");
-const inputEmail = document.querySelector("[name=email]")
+const inputEmail = document.querySelector("[name=email]");
 
 /* Открываем модалки */
 for (i = 0; i < buyLink.length; i++) {
@@ -21,7 +21,7 @@ for (i = 0; i < buyLink.length; i++) {
     closeModal();
     closeEsc();
     outClickClose();
-  })
+  });
 };
 
 feedbackLink.addEventListener("click", function (evt) {
@@ -55,7 +55,7 @@ feedbackForm.addEventListener("submit", function (evt) {
     if (!modalInput[i].value) {
       modalInput[i].classList.add("input-error");
       sumError += 1;
-    }
+    };
   };
   if (!email) {
     inputEmail.classList.add("input-error");
@@ -76,51 +76,37 @@ feedbackForm.addEventListener("submit", function (evt) {
 function validateEmail(email) {
     const re = /.+@.+\..+/i;
     return re.test(String(email).toLowerCase());
-}
+};
 
 /* Закрытие модалок кнопкой */
 function closeModal() {
-  for (i = 0; i < modal.length; i++) {
-    if (modal[i].classList.contains("modal-show")) {
-      const closeButton = modal[i].querySelector(".modal-close");
-      const activeModal = modal[i];
+  modal.forEach(elem => {
+    if (elem.classList.contains("modal-show")) {
+      const closeButton = elem.querySelector(".modal-close");
       closeButton.addEventListener("click", function (evt) {
         evt.preventDefault();
-        activeModal.classList.remove("modal-show");
         afterClose();
-      })
-    }
-  }
+      });
+    };
+  });
 };
 
 /* Закрытие по Esc */
 function closeEsc() {
-  for (i = 0; i < modal.length; i++) {
-    if (modal[i].classList.contains("modal-show")) {
-      const activeModal = modal[i];
-      window.addEventListener("keydown", function (evt) {
-        if (evt.key === "Escape") {
-          evt.preventDefault();
-          activeModal.classList.remove("modal-show");
-          afterClose();
-        }
-      })
-    }
-  }
+  window.addEventListener("keydown", function (evt) {
+    if (evt.key === "Escape") {
+      evt.preventDefault();
+      afterClose();
+    };
+  });
 };
 
 /* закрытие по клику вне модалки */
 function outClickClose() {
-  for (i = 0; i < modal.length; i++) {
-    if (modal[i].classList.contains("modal-show")) {
-      const activeModal = modal[i];
-      modalBg.addEventListener("click", function (evt) {
-        evt.preventDefault();
-        activeModal.classList.remove("modal-show");
-        afterClose();
-      })
-    }
-  }
+  modalBg.addEventListener("click", function (evt) {
+    evt.preventDefault();
+    afterClose();
+  });
 };
 
 /* блокируем задний фон */
@@ -131,6 +117,15 @@ function afterShow() {
 
 /* разблокируем задний фон */
 function afterClose() {
+  modal.forEach(elem => {
+    if (elem.classList.contains("modal-show")) {
+      const activeModal = elem;
+      activeModal.classList.add("modal-closing");
+      activeModal.addEventListener("animationend", function () {
+        activeModal.classList.remove("modal-closing", "modal-show");
+      }, { once: true });
+    };
+  });
   modalBg.classList.remove("modal-bg-show");
   pageBody.classList.remove("scroll-block");
   modalInput.forEach(n => n.classList.remove("input-error"));
@@ -165,7 +160,7 @@ for (i = 0; i < toggles.length; i++) {
     toggle.setAttribute("disabled", "disabled");
     allSlides.forEach(n => n.classList.remove("slide-shown"));
     slide.classList.add("slide-shown");
-  })
+  });
 };
 
 /* деактивация кнопки */
@@ -174,8 +169,8 @@ function toggleDisable() {
     if (allSlides[i].classList.contains("slide-shown")) {
       toggles.forEach(n => n.removeAttribute("disabled", "disabled"));
       toggles[i].setAttribute("disabled", "disabled");
-    }
-  }
+    };
+  };
 };
 /* следующий слайд */
 function nextSlide() {
@@ -186,10 +181,10 @@ function nextSlide() {
         allSlides[0].classList.add("slide-shown");
       } else {
         allSlides[i + 1].classList.add("slide-shown");
-      }
+      };
       break;
-    }
-  }
+    };
+  };
 };
 /* предыдущийслайд */
 function prevSlide() {
@@ -200,10 +195,10 @@ function prevSlide() {
         allSlides[allSlides.length - 1].classList.add("slide-shown");
       } else {
         allSlides[i - 1].classList.add("slide-shown");
-      }
+      };
       break;
-    }
-  }
+    };
+  };
 };
 
 /* Слайдер в блоке сервисы */
@@ -217,7 +212,7 @@ servicesDescs.classList.remove("services-descs-wide");
 descriptions.forEach(elem => {
   if (elem != descriptions[0]) {
     elem.classList.remove("service-desc-show");
-  }
+  };
 });
 
 services.forEach(n => n.addEventListener("click", serviceToggle));

@@ -1890,15 +1890,15 @@ img {
 .button-cont {
   margin-left: 10px;
 }
-.modal-closing {
-  animation: closing 1s;
-}
 .modal-show {
   display: block;
-  animation: appearance linear .2s;
+  animation: appearance linear .15s;
 }
 .feedback-error {
   animation: feedbackerror 1.5s;
+}
+.modal-closing {
+  animation: closing .15s forwards;
 }
 /* Анимации */
 @keyframes appearance {
@@ -1937,4 +1937,12 @@ img {
     box-shadow: 0 0 5px 2px var(--basic-red);
   }
   to {}
+}
+@keyframes closing {
+  from {}
+  to {
+    transform: scale(0);
+    opacity: 0;
+    display: none;
+  }
 }
