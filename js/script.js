@@ -13,8 +13,8 @@ const modalInput = document.querySelectorAll(".modal-field");
 const inputEmail = document.querySelector("[name=email]");
 
 /* Открываем модалки */
-for (i = 0; i < buyLink.length; i++) {
-  buyLink[i].addEventListener("click", function (evt) {
+buyLink.forEach(elem => {
+  elem.addEventListener("click", function (evt) {
     evt.preventDefault();
     cartModal.classList.add("modal-show");
     afterShow();
@@ -22,7 +22,7 @@ for (i = 0; i < buyLink.length; i++) {
     closeEsc();
     outClickClose();
   });
-};
+});
 
 feedbackLink.addEventListener("click", function (evt) {
   evt.preventDefault();
@@ -48,20 +48,17 @@ mapLink.addEventListener("click", function (evt) {
 feedbackForm.addEventListener("submit", function (evt) {
   modalInput.forEach(n => n.classList.remove("input-error"));
   let sumError = 0;
-  console.log("адрес " + inputEmail.value);
   let email = validateEmail(inputEmail.value);
-  console.log("проверка почты " + email);
-  for (i = 0; i < modalInput.length; i++) {
-    if (!modalInput[i].value) {
-      modalInput[i].classList.add("input-error");
+  modalInput.forEach(elem => {
+    if (!elem.value) {
+      elem.classList.add("input-error");
       sumError += 1;
     };
-  };
+  });
   if (!email) {
     inputEmail.classList.add("input-error");
     sumError += 1;
   };
-  console.log("всего ошибок " + sumError);
   if (sumError > 0) {
     evt.preventDefault();
     feedbackModal.classList.remove("feedback-error");
@@ -152,26 +149,26 @@ arrowPrev.addEventListener("click", function (evt) {
 });
 
 /* переключение кнопкой */
-for (i = 0; i < toggles.length; i++) {
-  let toggle = toggles[i];
-  let slide = allSlides[i];
+toggles.forEach((toggle, index) => {
   toggle.addEventListener("click", function (evt) {
-    toggles.forEach(n => n.removeAttribute("disabled", "disabled"));
+    evt.preventDefault();
+    toggles.forEach(n => n.removeAttribute("disabled"));
     toggle.setAttribute("disabled", "disabled");
     allSlides.forEach(n => n.classList.remove("slide-shown"));
-    slide.classList.add("slide-shown");
-  });
-};
+    allSlides[index].classList.add("slide-shown");
+  })
+});
 
 /* деактивация кнопки */
 function toggleDisable() {
-  for (i = 0; i < allSlides.length; i++) {
-    if (allSlides[i].classList.contains("slide-shown")) {
-      toggles.forEach(n => n.removeAttribute("disabled", "disabled"));
-      toggles[i].setAttribute("disabled", "disabled");
-    };
-  };
+  allSlides.forEach((slide, index) => {
+    if (slide.classList.contains("slide-shown")) {
+      toggles.forEach(toggle => toggle.removeAttribute("disabled"));
+      toggles[index].setAttribute("disabled", "disabled");
+    }
+  })
 };
+
 /* следующий слайд */
 function nextSlide() {
   for (i = 0; i < allSlides.length; i++) {
@@ -209,6 +206,7 @@ const servicesDescs = document.querySelector(".services-descs");
 
 servicesNames.classList.remove("services-names-hide");
 servicesDescs.classList.remove("services-descs-wide");
+
 descriptions.forEach(elem => {
   if (elem != descriptions[0]) {
     elem.classList.remove("service-desc-show");
@@ -229,12 +227,12 @@ function serviceToggle() {
     !this.setAttribute("aria-pressed", "true");
     !this.setAttribute("tabindex", "-1");
   });
-  for (i = 0; i < services.length; i++) {
-    if (services[i].classList.contains('service-name-active')) {
+  services.forEach((service, index) => {
+    if (service.classList.contains('service-name-active')) {
       descriptions.forEach(n => n.classList.remove("service-desc-show"));
-      descriptions[i].classList.add("service-desc-show");
+      descriptions[index].classList.add("service-desc-show");
     }
-  }
+  });
 };
 
 
