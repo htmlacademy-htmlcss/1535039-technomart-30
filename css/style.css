@@ -147,6 +147,9 @@ img {
 .button:active {
   background-color: var(--red-button-active);
 }
+.list {
+  list-style: none;
+}
 /* Стилизация хедера */
 .main-header {
   background-color: var(--light-background);
@@ -377,7 +380,6 @@ img {
   padding: 46px 0 0;
   margin: 0;
   justify-self: start;
-  list-style: none;
 }
 .header-phone {
   font-family: "Cuprum bold", Arial, sans-serif;
@@ -515,7 +517,6 @@ img {
   fill: var(--lightgray);
 }
 .site-nav {
-  list-style: none;
   display: flex;
   justify-content: stretch;
   flex-wrap: wrap;
@@ -573,7 +574,6 @@ img {
     "fs fs fdv";
 }
 .features-list {
-  list-style: none;
   padding: 0;
   margin: 0;
 }
@@ -813,7 +813,6 @@ img {
   margin-left: auto;
 }
 .product-list {
-  list-style: none;
   padding: 0;
   margin: 0 -20px 0 0;
   display: flex;
@@ -979,7 +978,6 @@ img {
   padding-right: 19px;
 }
 .brands-list {
-  list-style: none;
   padding: 0;
   margin: 0 -20px 0 0;
   display: flex;
@@ -1031,7 +1029,6 @@ img {
   margin: 25px 0 68px;
 }
 .services-slider {
-  list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
@@ -1039,7 +1036,6 @@ img {
   min-height: 283px;
 }
 .services-names {
-  list-style: none;
   margin: 0 80px 0 0;
   position: relative;
   justify-self: start;
@@ -1170,7 +1166,6 @@ img {
   margin-bottom: 2px;
 }
 .delivery-list {
-  list-style: none;
   margin: 0 0 20px;
   padding: 0;
 }
@@ -1241,7 +1236,6 @@ img {
 }
 .footer-top-menu,
 .footer-bottom-menu {
-  list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
@@ -1300,7 +1294,6 @@ img {
   text-decoration: none;
 }
 .social-list {
-  list-style: none;
   margin: 0 auto 0 0;
   padding: 0;
   display: flex;
@@ -1374,7 +1367,6 @@ img {
   margin: 0 0 20px;
 }
 .breadcrumbs {
-  list-style: none;
   order: -1;
   padding: 0;
   margin: 21px 20px 21px 0;
@@ -1577,11 +1569,6 @@ img {
   margin-bottom: 16px;
   padding-right: 5px;
 }
-.parameteres-list,
-.sort-parameteres,
-.sort-direction {
-  list-style: none;
-}
 .parameteres-check:disabled + .parameteres-name,
 .parameteres-radio:disabled + .parameteres-name {
   opacity: .4;
@@ -1729,7 +1716,6 @@ img {
 }
 /* стили пагинации */
 .pagination {
-  list-style: none;
   display: flex;
   justify-content: start;
   align-content: stretch;
