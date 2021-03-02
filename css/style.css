@@ -77,7 +77,7 @@
   --nav-pic: #3D546F;
   --scale-bg: #D7DCDE;
   --input-hover: #B5B5B5;
-  --slider-bg: rgba(0, 0, 0, 0.25);
+  --slider-bg: #291A17;
 }
 
 /* Глобальные */
@@ -691,7 +691,7 @@ img {
 }
 /* Стили для слайдера в блоке features */
 .slider {
-  background-color: var(--light-bluegray);
+  background-color: var(--slider-bg);
   grid-area: fs;
   height: 100%;
   margin: 0;
