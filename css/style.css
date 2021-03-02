@@ -495,7 +495,7 @@ img {
   right: -19px;
   width: 4px;
   height: 5px;
-  background: url("../img/icons/Shape.svg") no-repeat;
+  background: url("../img/icons/shape.svg") no-repeat;
 }
 .login:hover,
 .registration:hover,
@@ -546,8 +546,9 @@ img {
 .site-nav-link:focus {
   background-color: var(--dark-bluegray);
 }
-.site-nav-link:active {
+.site-nav-link[href]:active {
   background-color: var(--site-nav-bluegray);
+  color:var(--white-translucent);
 }
 /* Стилиблока акций и предложений */
 .features {
@@ -583,7 +584,8 @@ img {
   justify-content: space-between;
   position: relative;
   overflow: hidden;
-  padding: 20px 0 21px 0;
+  padding: 20px 10px 21px 0;
+  background-color: var(--light-bluegray);
 }
 .features-materials {
   background-color: var(--special-yellow);
